@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects Gallery | VG International</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .blueprint-grid {
+            background-image: linear-gradient(to right, #c4c6d1 1px, transparent 1px),
+                              linear-gradient(to bottom, #c4c6d1 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "on-primary-container": "#7796d1",
+                        "primary-fixed-dim": "#abc7ff",
+                        "tertiary": "#330e00",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#541d02",
+                        "primary-fixed": "#d7e2ff",
+                        "surface-variant": "#e2e3e1",
+                        "on-primary-fixed": "#001b3f",
+                        "surface-container-low": "#f4f4f2",
+                        "primary-container": "#002d62",
+                        "surface-container": "#eeeeec",
+                        "surface-tint": "#3e5e95",
+                        "tertiary-fixed-dim": "#ffb597",
+                        "surface": "#f9f9f7",
+                        "surface-dim": "#dadad8",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2f3130",
+                        "outline-variant": "#c4c6d1",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#d4815d",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f9f9f7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#24467c",
+                        "secondary-fixed": "#93f2f2",
+                        "on-surface": "#1a1c1b",
+                        "secondary-container": "#90efef",
+                        "inverse-primary": "#abc7ff",
+                        "secondary": "#006a6a",
+                        "secondary-fixed-dim": "#76d6d5",
+                        "tertiary-fixed": "#ffdbcd",
+                        "inverse-on-surface": "#f1f1ef",
+                        "outline": "#747781",
+                        "primary": "#00193c",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#002020",
+                        "on-secondary-container": "#006e6e",
+                        "on-surface-variant": "#43474f",
+                        "background": "#f9f9f7",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1b",
+                        "on-tertiary-fixed-variant": "#743417",
+                        "surface-container-highest": "#e2e3e1",
+                        "surface-container-high": "#e8e8e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50">
+<div class="flex justify-between items-center px-12 h-20 w-full max-w-[1920px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-[#00193c] dark:text-white">
+                VG International
+            </div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="font-inter tracking-tight font-medium uppercase text-[11px] text-slate-500 hover:text-[#00193c] transition-colors transition-all duration-300 ease-in-out" href="#">Disciplines</a>
+<a class="font-inter tracking-tight font-medium uppercase text-[11px] text-slate-500 hover:text-[#00193c] transition-colors transition-all duration-300 ease-in-out" href="#">Specialisms</a>
+<a class="font-inter tracking-tight font-medium uppercase text-[11px] text-slate-500 hover:text-[#00193c] transition-colors transition-all duration-300 ease-in-out" href="#">Owners Engineering</a>
+<a class="font-inter tracking-tight font-medium uppercase text-[11px] text-[#00193c] border-b-2 border-[#00193c] pb-1 transition-all duration-300 ease-in-out" href="#">Projects</a>
+<a class="font-inter tracking-tight font-medium uppercase text-[11px] text-slate-500 hover:text-[#00193c] transition-colors transition-all duration-300 ease-in-out" href="#">Insights</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">search</button>
+<button class="bg-primary-container text-white px-6 py-2.5 text-[11px] font-bold uppercase tracking-widest hover:bg-secondary transition-all duration-300">
+                    Request Proposal
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[614px] bg-primary flex items-end overflow-hidden">
+<div class="absolute inset-0 blueprint-grid opacity-10"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent"></div>
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-overlay grayscale opacity-50" data-alt="Monochromatic low angle architectural photograph of a sleek glass skyscraper reflecting a clear sky with sharp geometric lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPiiTE8XgmPxniAFgNP1AnPO4ze1aQhRTvv_19Ihs0hw0sFIEmeJx4lq0JUWhFPVZAzvI15H2jKY7iCcsidwxgtMFERcqqvLU4c5Pyt_mzxYzPfXevHNH-EY9RUipCFaUZ3V09oGFbhVAuPrLvLJW-G6wMpOhaYCuEVo1O_cndcpZMIf3eSJiaPlW4sGUK6_7pY0-yFc8CP0T8D4LpOXh78FgUTzl9uXJQ_1YUns2FrZPYVwPz2lL9afgfA_trBXArzhIIDN2U-qc"/>
+<div class="relative w-full max-w-[1920px] mx-auto px-12 pb-20 grid grid-cols-12">
+<div class="col-span-8">
+<span class="inline-block text-[11px] font-bold uppercase tracking-[0.2em] text-on-primary-container mb-4">Portfolio of Excellence</span>
+<h1 class="text-white text-6xl font-bold tracking-tighter leading-[1.1] mb-6 max-w-2xl">
+                        Global High-Value Building Assets.
+                    </h1>
+</div>
+</div>
+</section>
+<!-- Filter Bar -->
+<section class="sticky top-20 z-40 bg-surface-container-lowest border-b border-outline-variant/20 shadow-sm">
+<div class="max-w-[1920px] mx-auto px-12 py-6 flex flex-wrap justify-between items-center gap-8">
+<div class="flex items-center gap-12">
+<div class="flex flex-col gap-1.5">
+<span class="text-[10px] font-bold uppercase tracking-wider text-outline">Sector</span>
+<div class="flex gap-6">
+<button class="text-[13px] font-semibold text-primary border-b-2 border-secondary pb-0.5">All Sectors</button>
+<button class="text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors">Data Centers</button>
+<button class="text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors">Industrial</button>
+<button class="text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors">Commercial</button>
+<button class="text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors">Healthcare</button>
+</div>
+</div>
+<div class="h-10 w-px bg-outline-variant/30"></div>
+<div class="flex flex-col gap-1.5">
+<span class="text-[10px] font-bold uppercase tracking-wider text-outline">Region</span>
+<div class="flex gap-6">
+<button class="text-[13px] font-semibold text-primary border-b-2 border-secondary pb-0.5">Global</button>
+<button class="text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors">Asia Pacific</button>
+<button class="text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors">EMEA</button>
+<button class="text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors">Americas</button>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[11px] font-medium text-on-surface-variant">Showing 24 Assets</span>
+<button class="flex items-center gap-2 border border-outline-variant/30 px-4 py-2 text-[11px] font-bold uppercase tracking-widest hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+                        Advanced Filters
+                    </button>
+</div>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="max-w-[1920px] mx-auto px-12 py-24">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-20">
+<!-- Project Card 1 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[16/10] overflow-hidden bg-surface-container mb-6">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="Minimalist modern data center exterior with clean metallic paneling and blue linear accent lighting at twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGlwrSjPRhutK4A512xjj3Sg3jm2TJLhpVCjijqNh1tHlAdZcG9HG7eyCKP-SAt--ywvoYuPHnozPaYoHERzHgQFBMoiwmngq5Vl091vE_MycQoQoQ6uCVzUn0ZGC0HlCnBpS6hHOF4M9exoHvxRXCSe4W1I9yQaHjljI9X6BUc--hC8t0XIo_ftZoNiOqklFR5NfHp4lp2geBOxP9EBzYkquptyqgNSRZEcEpjh-KCd62ahTcel9J-RAyhYTwNytoWMVncp-ZwXk"/>
+<div class="absolute top-4 left-4 bg-primary text-white text-[9px] font-black uppercase tracking-[0.2em] px-3 py-1">
+                            Operational
+                        </div>
+</div>
+<div class="flex justify-between items-start border-t border-outline-variant/20 pt-6">
+<div>
+<h3 class="text-xl font-bold tracking-tighter text-primary mb-1">Apex Core Facility</h3>
+<p class="text-[12px] font-medium text-on-surface-variant uppercase tracking-wider mb-4">Singapore • Data Centers</p>
+</div>
+<div class="text-right">
+<div class="text-secondary font-bold text-[11px] uppercase tracking-tighter border-l-2 border-secondary pl-3">
+                                Tier IV Certified
+                            </div>
+</div>
+</div>
+<div class="mt-4 flex gap-2">
+<span class="text-[10px] text-outline border border-outline-variant/30 px-2 py-1">50MW Capacity</span>
+<span class="text-[10px] text-outline border border-outline-variant/30 px-2 py-1">LEED Platinum</span>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[16/10] overflow-hidden bg-surface-container mb-6">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="Interior view of a modern luxury commercial lobby with high ceilings, marble floors, and structural steel beams" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX25jXhy17GhLsDCXSQIs_SJ6KCZk_oZls15iOV-MK-gKYHeZd5ZHZr7ysaAVJkyd9OXOBs-XCGDkQk8mFMF7hxE_e10TaInqYKY1FFsnqfZoYk3MY2Dq-VjBsQWm29SacasKk3ckYy7azWhZZe2umV1o9APhpJFIyHB1HVMTIQZowzEEJpa-m917CouDoXmlSEzeTvw3Y3yVrN5_lqkZna52auEmRhhHiTvymAN_Wf1B86pDr_Jh_R8meuv2zpns7bBkeFDaA_Sw"/>
+</div>
+<div class="flex justify-between items-start border-t border-outline-variant/20 pt-6">
+<div>
+<h3 class="text-xl font-bold tracking-tighter text-primary mb-1">Meridian Square</h3>
+<p class="text-[12px] font-medium text-on-surface-variant uppercase tracking-wider mb-4">London • Commercial</p>
+</div>
+<div class="text-right">
+<div class="text-secondary font-bold text-[11px] uppercase tracking-tighter border-l-2 border-secondary pl-3">
+                                BREEAM Outstanding
+                            </div>
+</div>
+</div>
+<div class="mt-4 flex gap-2">
+<span class="text-[10px] text-outline border border-outline-variant/30 px-2 py-1">Mixed-Use</span>
+<span class="text-[10px] text-outline border border-outline-variant/30 px-2 py-1">82 Stories</span>
+</div>
+</div>
+<!-- Project Card 3 (Featured Large) -->
+<div class="group flex flex-col">
+<div class="relative aspect-[16/10] overflow-hidden bg-surface-container mb-6">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="Exterior of a massive industrial logistics hub with a rhythmic series of loading docks and clean architectural lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkaA5Vsfm9r6QxOxfQsgRrPfUPYEmoPakUbTrnMMpU8SRXPWj0viiW8lh1XEEeT8dUclxf4UB23kO0_UPkgXsIXYU3gPaYFlGXldyzGPTb2p9pUMEix5WxFMFCPeo6HuHD6SXSjRhiHECVoVmq1L95R6LMz96Lj5-0X9Y0oODLSnYQbhrJTLt39xtvJejWllpiMXyWeSj--uk-pv3A09YO_UCKfemNEtYhLrKEKzi9b1L7QiF1lYH54G43aQVOmbe_9L1T4NUE_yQ"/>
+</div>
+<div class="flex justify-between items-start border-t border-outline-variant/20 pt-6">
+<div>
+<h3 class="text-xl font-bold tracking-tighter text-primary mb-1">Eurasia Logistics Hub</h3>
+<p class="text-[12px] font-medium text-on-surface-variant uppercase tracking-wider mb-4">Munich • Industrial</p>
+</div>
+<div class="text-right">
+<div class="text-secondary font-bold text-[11px] uppercase tracking-tighter border-l-2 border-secondary pl-3">
+                                Net Zero Carbon
+                            </div>
+</div>
+</div>
+<div class="mt-4 flex gap-2">
+<span class="text-[10px] text-outline border border-outline-variant/30 px-2 py-1">Smart Grid Integrated</span>
+<span class="text-[10px] text-outline border border-outline-variant/30 px-2 py-1">Automation 2.0</span>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[16/10] overflow-hidden bg-surface-container mb-6">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="Aerial view of a contemporary healthcare complex featuring modular pods and lush rooftop gardens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAudOMK28zvSaOa5Z5RaHyzlnbTA6PRaNMr_fae_rSNqClV3GVhwvPg6R-zbgbmnbJOn6vpEQjNhYYycryvmNtglR2_-FZYfrjn1s1d2i1CxdRI6VuMRYy710j_z0QICICGvW1PBtD8EpaysRQIGMsoqikmVazRFJJJzHsyY6gxQdlunuhw66xLwES4eLKbd9UhPGKrrwtcXm900bTJs0KM_n7O9g9pjuzUO7w9iM7soogzUeSqux7B7cOeIA4U2lJMoK171rsLGhw"/>
+</div>
+<div class="flex justify-between items-start border-t border-outline-variant/20 pt-6">
+<div>
+<h3 class="text-xl font-bold tracking-tighter text-primary mb-1">Vitalis Health District</h3>
+<p class="text-[12px] font-medium text-on-surface-variant uppercase tracking-wider mb-4">Melbourne • Healthcare</p>
+</div>
+<div class="text-right">
+<div class="text-secondary font-bold text-[11px] uppercase tracking-tighter border-l-2 border-secondary pl-3">
+                                High Bio-Security
+                            </div>
+</div>
+</div>
+<div class="mt-4 flex gap-2">
+<span class="text-[10px] text-outline border border-outline-variant/30 px-2 py-1">Specialist Center</span>
+<span class="text-[10px] text-outline border border-outline-variant/30 px-2 py-1">R&amp;D Wing</span>
+</div>
+</div>
+<!-- Project Card 5 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[16/10] overflow-hidden bg-surface-container mb-6">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="Interior architectural view of a minimalist white workspace with large glass windows and concrete columns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDleO70J9Nr0Tuv0862Kp0jviok3TT-9qs-NfZCr6evx87SpejEHzZNHo3xEscC_xAT1IklJINxvnEB4HfjKfrCWhhSA8xhqHxtx33rzVU78mBn1MK0wCF1rjP5vatnLx9GL84H3UK7MmupBAGUwiQBPKb9eSE5bZ23P-g2Oo7EiOSj7D8oJHgJllpJ4ipZ79ub2M4j0gOS0gpgJu6o0IcCdtrSH8OML22lo-acWQt5VS5XXDRWay9gnwODAmWuugtBhohkDKGlB1w"/>
+</div>
+<div class="flex justify-between items-start border-t border-outline-variant/20 pt-6">
+<div>
+<h3 class="text-xl font-bold tracking-tighter text-primary mb-1">Nexus Tech Campus</h3>
+<p class="text-[12px] font-medium text-on-surface-variant uppercase tracking-wider mb-4">San Jose • Commercial</p>
+</div>
+<div class="text-right">
+<div class="text-secondary font-bold text-[11px] uppercase tracking-tighter border-l-2 border-secondary pl-3">
+                                WELL Gold
+                            </div>
+</div>
+</div>
+<div class="mt-4 flex gap-2">
+<span class="text-[10px] text-outline border border-outline-variant/30 px-2 py-1">HQ Campus</span>
+<span class="text-[10px] text-outline border border-outline-variant/30 px-2 py-1">Adaptive Reuse</span>
+</div>
+</div>
+<!-- Project Card 6 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[16/10] overflow-hidden bg-surface-container mb-6">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="High-tech interior of a modern manufacturing plant with automated robotic arms and clean industrial layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDokjYkQ_n53FBppERNJHE7H-hJwV_WYTDZEOCmu1JCugdGnNYmKG2NJDa9M2EA7V1qO9kte0ZmGgiCpfPGbAxFQLa-KJiA_lFF2QR69bRhO0RRkiYJoFxJFxp_xZr_fXmiZqSLVj-7kWnMWWt3QafFDYOfHwD48M9yDW3LlxNMvrNWohS4Yao1myRDjCSyQN1ln2hXXKkbiUhaHoihBw9h0h1ukkvY3yDbopY6xWXqRqWU4aICiyMVL0ct6PvhY2-24JyE6V6CcPQ"/>
+</div>
+<div class="flex justify-between items-start border-t border-outline-variant/20 pt-6">
+<div>
+<h3 class="text-xl font-bold tracking-tighter text-primary mb-1">Precision Lab 01</h3>
+<p class="text-[12px] font-medium text-on-surface-variant uppercase tracking-wider mb-4">Tokyo • Industrial</p>
+</div>
+<div class="text-right">
+<div class="text-secondary font-bold text-[11px] uppercase tracking-tighter border-l-2 border-secondary pl-3">
+                                ISO 5 Cleanroom
+                            </div>
+</div>
+</div>
+<div class="mt-4 flex gap-2">
+<span class="text-[10px] text-outline border border-outline-variant/30 px-2 py-1">Nanotech</span>
+<span class="text-[10px] text-outline border border-outline-variant/30 px-2 py-1">R&amp;D Lab</span>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-24 pt-12 border-t border-outline-variant/20 flex flex-col items-center">
+<button class="group flex flex-col items-center gap-4">
+<span class="text-[11px] font-bold uppercase tracking-[0.3em] text-primary group-hover:text-secondary transition-colors">Load More Projects</span>
+<span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors animate-bounce">expand_more</span>
+</button>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-surface-container-low py-32 px-12">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-4xl font-bold tracking-tighter text-primary mb-8">Architecting the future of global infrastructure.</h2>
+<div class="h-1 w-20 bg-secondary mx-auto mb-12"></div>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-12">
+                    Our engineering authority extends across continents, delivering high-stakes assets with precision and innovation. Ready to discuss your next masterplan?
+                </p>
+<button class="bg-primary text-white px-10 py-4 text-[13px] font-bold uppercase tracking-[0.15em] hover:bg-secondary transition-all">
+                    Inquire About Services
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 dark:border-slate-800 bg-[#f9f9f7] dark:bg-slate-950">
+<div class="grid grid-cols-4 gap-12 px-12 py-20 max-w-[1920px] mx-auto">
+<div class="col-span-1">
+<div class="text-lg font-bold text-[#00193c] dark:text-white mb-6">VG International</div>
+<p class="text-[14px] font-inter leading-relaxed text-slate-600 dark:text-slate-400 max-w-xs">
+                    The sovereign blueprint for global engineering and high-value asset development.
+                </p>
+</div>
+<div class="col-span-1">
+<span class="text-[11px] uppercase tracking-[0.05em] font-bold text-[#00193c] dark:text-slate-200 block mb-6">Services</span>
+<ul class="flex flex-col gap-3">
+<li><a class="text-[14px] text-slate-600 dark:text-slate-400 hover:text-[#006a6a] transition-colors" href="#">Strategic Planning</a></li>
+<li><a class="text-[14px] text-slate-600 dark:text-slate-400 hover:text-[#006a6a] transition-colors" href="#">Structural Design</a></li>
+<li><a class="text-[14px] text-slate-600 dark:text-slate-400 hover:text-[#006a6a] transition-colors" href="#">Operations Audit</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<span class="text-[11px] uppercase tracking-[0.05em] font-bold text-[#00193c] dark:text-slate-200 block mb-6">Company</span>
+<ul class="flex flex-col gap-3">
+<li><a class="text-[14px] text-slate-600 dark:text-slate-400 hover:text-[#006a6a] transition-colors" href="#">Company Info</a></li>
+<li><a class="text-[14px] text-slate-600 dark:text-slate-400 hover:text-[#006a6a] transition-colors" href="#">Insights</a></li>
+<li><a class="text-[14px] text-slate-600 dark:text-slate-400 hover:text-[#006a6a] transition-colors" href="#">Newsletter Signup</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<span class="text-[11px] uppercase tracking-[0.05em] font-bold text-[#00193c] dark:text-slate-200 block mb-6">Connect</span>
+<ul class="flex flex-col gap-3">
+<li><a class="text-[14px] text-slate-600 dark:text-slate-400 hover:text-[#006a6a] transition-colors" href="#">LinkedIn</a></li>
+<li><a class="text-[14px] text-slate-600 dark:text-slate-400 hover:text-[#006a6a] transition-colors" href="#">Contact Office</a></li>
+</ul>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-slate-200 dark:border-slate-800">
+<div class="flex justify-between items-center max-w-[1920px] mx-auto">
+<p class="text-[11px] uppercase tracking-[0.05em] text-slate-500">
+                    © 2024 VG International. All rights reserved. Engineering Authority.
+                </p>
+<div class="flex gap-8">
+<a class="text-[11px] uppercase tracking-[0.05em] text-slate-500 hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-[11px] uppercase tracking-[0.05em] text-slate-500 hover:text-primary transition-colors" href="#">Terms</a>
+</div>
+</div>
+</div>
+</footer>
+
+```</body></html>

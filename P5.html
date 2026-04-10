@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VG International | Engineering Authority</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "on-primary-container": "#7796d1",
+                        "primary-fixed-dim": "#abc7ff",
+                        "tertiary": "#330e00",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#541d02",
+                        "primary-fixed": "#d7e2ff",
+                        "surface-variant": "#e2e3e1",
+                        "on-primary-fixed": "#001b3f",
+                        "surface-container-low": "#f4f4f2",
+                        "primary-container": "#002d62",
+                        "surface-container": "#eeeeec",
+                        "surface-tint": "#3e5e95",
+                        "tertiary-fixed-dim": "#ffb597",
+                        "surface": "#f9f9f7",
+                        "surface-dim": "#dadad8",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2f3130",
+                        "outline-variant": "#c4c6d1",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#d4815d",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f9f9f7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#24467c",
+                        "secondary-fixed": "#93f2f2",
+                        "on-surface": "#1a1c1b",
+                        "secondary-container": "#90efef",
+                        "inverse-primary": "#abc7ff",
+                        "secondary": "#006a6a",
+                        "secondary-fixed-dim": "#76d6d5",
+                        "tertiary-fixed": "#ffdbcd",
+                        "inverse-on-surface": "#f1f1ef",
+                        "outline": "#747781",
+                        "primary": "#00193c",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#002020",
+                        "on-secondary-container": "#006e6e",
+                        "on-surface-variant": "#43474f",
+                        "background": "#f9f9f7",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1b",
+                        "on-tertiary-fixed-variant": "#743417",
+                        "surface-container-highest": "#e2e3e1",
+                        "surface-container-high": "#e8e8e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9f7; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .blueprint-grid {
+            background-image: linear-gradient(#c4c6d1 1px, transparent 1px), linear-gradient(90deg, #c4c6d1 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.05;
+        }
+        .perspective-card:hover { transform: translateY(-4px); }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50 flex justify-between items-center px-12 h-20 w-full max-w-[1920px] mx-auto">
+<div class="flex items-center gap-8">
+<div class="text-xl font-bold tracking-tighter text-[#00193c] flex items-center gap-2">
+<div class="w-8 h-8 bg-[#00193c] flex items-center justify-center text-white text-[10px] leading-none">VG</div>
+                VG International
+            </div>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-inter tracking-tight font-medium uppercase text-[11px] text-[#00193c] border-b-2 border-[#00193c] pb-1" href="#">Disciplines</a>
+<a class="font-inter tracking-tight font-medium uppercase text-[11px] text-slate-500 hover:text-[#00193c] transition-colors" href="#">Specialisms</a>
+<a class="font-inter tracking-tight font-medium uppercase text-[11px] text-slate-500 hover:text-[#00193c] transition-colors" href="#">Owners Engineering</a>
+<a class="font-inter tracking-tight font-medium uppercase text-[11px] text-slate-500 hover:text-[#00193c] transition-colors" href="#">Projects</a>
+<a class="font-inter tracking-tight font-medium uppercase text-[11px] text-slate-500 hover:text-[#00193c] transition-colors" href="#">Insights</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center text-slate-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<button class="bg-[#006a6a] text-white px-6 py-2.5 text-[11px] font-bold uppercase tracking-widest rounded-sm hover:bg-[#004f4f] transition-all">
+                Request Proposal
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center px-12 py-20 max-w-[1920px] mx-auto overflow-hidden">
+<div class="absolute inset-0 blueprint-grid pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full relative z-10">
+<div class="lg:col-span-6 flex flex-col justify-center">
+<label class="text-[11px] uppercase tracking-[0.2em] text-secondary font-bold mb-6">Established Authority</label>
+<h1 class="text-[56px] leading-[1.1] font-bold text-primary tracking-tighter mb-8 max-w-xl">
+                        Engineering clarity for complex building systems
+                    </h1>
+<p class="text-on-surface-variant text-[18px] leading-relaxed mb-12 max-w-lg">
+                        We provide integrated consultancy that bridges the gap between architectural vision and operational excellence. Sovereign engineering for the modern built environment.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-secondary text-on-secondary px-8 py-4 text-[11px] font-bold uppercase tracking-widest rounded-sm hover:bg-[#004f4f] transition-all shadow-lg shadow-secondary/10">
+                            Explore Sectors
+                        </button>
+<button class="border border-outline-variant/30 text-primary px-8 py-4 text-[11px] font-bold uppercase tracking-widest rounded-sm hover:bg-surface-container transition-all">
+                            Download Capability Deck
+                        </button>
+</div>
+</div>
+<div class="lg:col-span-6 relative">
+<div class="aspect-[4/5] bg-surface-container relative overflow-hidden group">
+<img class="w-full h-full object-cover grayscale brightness-95 group-hover:scale-105 transition-transform duration-700" data-alt="Monochromatic high-angle shot of a futuristic glass skyscraper with intricate geometric steel lattice structure reflecting clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQBmNjULxr5Q9EnPLH5w8t_yHAe6TlrqJZ6cVymrByI13IGQ5SGbgXNspuX3tuQm9uwxBkPNYTr2205oZroZ8e_Vm7to2jHKiYxjOCPf2YonU-yudjZxv54QtsQPrxvDd5vJwNiCJ12AviZ6WPcJSs2DnpbM0RtKxe9JTSTToET9BNruFBwVQCQdCw4xM_g6WimY6YnYYPW7yziH4kub4yQY8pD_IRY86LxUzmlEzTcWNaTi07yyTjNT6Zj8cydwJC9rK235948KM"/>
+<div class="absolute top-12 left-12 bg-white/90 backdrop-blur p-6 border-l-4 border-secondary shadow-xl max-w-[200px]">
+<div class="text-3xl font-bold text-primary mb-1 tracking-tighter">47</div>
+<div class="text-[10px] uppercase font-bold tracking-wider text-on-surface-variant leading-tight">
+                                Net-Zero Projects Delivered Globally
+                            </div>
+</div>
+<!-- Technical Overlays -->
+<div class="absolute bottom-0 right-0 p-8">
+<div class="flex gap-1">
+<div class="w-12 h-[1px] bg-white/40 mt-3"></div>
+<div class="text-[10px] text-white/60 font-mono">LAT: 1.3521° N / LON: 103.8198° E</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Moat Section: Disciplines -->
+<section class="bg-surface-container-low py-32 px-12">
+<div class="max-w-[1920px] mx-auto">
+<div class="mb-20 flex justify-between items-end">
+<div class="max-w-xl">
+<label class="text-[11px] uppercase tracking-[0.2em] text-on-surface-variant font-bold mb-4 block">Core Disciplines</label>
+<h2 class="text-3xl font-bold text-primary tracking-tight">The Foundation of Our Performance</h2>
+</div>
+<div class="text-right hidden md:block">
+<span class="text-on-surface-variant text-[14px]">Technical superiority through specialized focus.</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Architecture -->
+<div class="bg-surface-container-lowest p-10 border border-outline-variant/10 perspective-card transition-all">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary">architecture</span>
+</div>
+<h3 class="text-xl font-bold text-primary mb-4">Architecture</h3>
+<p class="text-on-surface-variant text-[14px] leading-relaxed mb-8">
+                            Synthesizing aesthetic ambition with structural reality. We design spaces that prioritize human experience and environmental resilience.
+                        </p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-[11px] uppercase font-bold text-primary tracking-wide">
+<span class="w-1.5 h-1.5 bg-secondary"></span> Master Planning
+                            </li>
+<li class="flex items-center gap-3 text-[11px] uppercase font-bold text-primary tracking-wide">
+<span class="w-1.5 h-1.5 bg-secondary"></span> Interior Architecture
+                            </li>
+</ul>
+</div>
+<!-- Structural -->
+<div class="bg-surface-container-lowest p-10 border border-outline-variant/10 perspective-card transition-all">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary">foundation</span>
+</div>
+<h3 class="text-xl font-bold text-primary mb-4">Structural</h3>
+<p class="text-on-surface-variant text-[14px] leading-relaxed mb-8">
+                            Precise load calculations and material innovation. Ensuring the skeletal integrity of structures in the most demanding seismic zones.
+                        </p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-[11px] uppercase font-bold text-primary tracking-wide">
+<span class="w-1.5 h-1.5 bg-secondary"></span> High-Rise Engineering
+                            </li>
+<li class="flex items-center gap-3 text-[11px] uppercase font-bold text-primary tracking-wide">
+<span class="w-1.5 h-1.5 bg-secondary"></span> Material Optimization
+                            </li>
+</ul>
+</div>
+<!-- MEPF -->
+<div class="bg-surface-container-lowest p-10 border border-outline-variant/10 perspective-card transition-all">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary">settings_input_component</span>
+</div>
+<h3 class="text-xl font-bold text-primary mb-4">MEPF</h3>
+<p class="text-on-surface-variant text-[14px] leading-relaxed mb-8">
+                            The nervous system of any building. Mechanical, Electrical, Plumbing, and Fire systems optimized for maximum efficiency.
+                        </p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-[11px] uppercase font-bold text-primary tracking-wide">
+<span class="w-1.5 h-1.5 bg-secondary"></span> Smart Building Integration
+                            </li>
+<li class="flex items-center gap-3 text-[11px] uppercase font-bold text-primary tracking-wide">
+<span class="w-1.5 h-1.5 bg-secondary"></span> Fire Life Safety
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Specialism Carousel -->
+<section class="py-32 px-12 max-w-[1920px] mx-auto overflow-hidden">
+<div class="flex flex-col lg:flex-row justify-between items-start mb-20 gap-12">
+<div class="max-w-xl">
+<h2 class="text-[44px] font-bold text-primary leading-none tracking-tighter mb-8">Specialized Technical Infrastructure</h2>
+<p class="text-on-surface-variant text-lg">Deploying expertise where precision is non-negotiable.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-14 h-14 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-14 h-14 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Data Centers -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden relative mb-6">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-75" data-alt="Interior view of a massive modern data center with glowing blue server racks and precise overhead cabling systems" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEW5jPo96Y9X8J2DU80W_-42FCrxEOP99N1aIlLXNj6hGHVnsnpDJAar0P7RavGWsToqgwU7ja3F0x5IAMoZ28bGnW19pSQ9hPiAjUlBIv9Yn_L7LFbPhilazU88kuqjClVKxb0OF4lXzwMqeabOmpJmXnh_6kWkGwR_XkCTNj3hTNnDo6k4j2IU_xP1OQFjX3tLNpwvkPMrEFFP3Kti-nIxvoXjA9QMRz7aFxV8Hx8NqRUFYOTpMqF2VBoQFNLuHKOFqCWLIrrwE"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex gap-2 mb-3">
+<span class="text-[10px] font-bold uppercase tracking-wider bg-surface px-2 py-1 border border-outline-variant/30 text-on-surface-variant">Tier IV</span>
+<span class="text-[10px] font-bold uppercase tracking-wider bg-surface px-2 py-1 border border-outline-variant/30 text-on-surface-variant">Critical Power</span>
+</div>
+<h4 class="text-lg font-bold text-primary">Data Centers</h4>
+</div>
+<!-- Cold Storage -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden relative mb-6">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-75" data-alt="Industrial cold storage facility with frosty metallic surfaces and precision temperature control monitors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeWUf2k7pdjgQFjJUcR3BRS1bq6sx6p7ToGyPiIKD4Y62I1jhktjYQ6LAbFf23pvnpeh2gOU9Rcy7LsFBmEaWlenR0WfbsTCU2UTj9hvOM8J9HjgDxdPR_rLVIW2uwvlS9LMBuzZUunYeJIfS7VIpMmJcnQDTaFPjO5AVs_7p8n9WJorgNaE0t21Otz3a8x0SkH8-T49S_qbTW_EXBPPWeeAouRpWHVYkvL0s7RChoJXxJSvo0-hgz7ffSf2CaB4vA2M6JVx6RYK8"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex gap-2 mb-3">
+<span class="text-[10px] font-bold uppercase tracking-wider bg-surface px-2 py-1 border border-outline-variant/30 text-on-surface-variant">Pharma</span>
+<span class="text-[10px] font-bold uppercase tracking-wider bg-surface px-2 py-1 border border-outline-variant/30 text-on-surface-variant">Logistics</span>
+</div>
+<h4 class="text-lg font-bold text-primary">Cold Storage</h4>
+</div>
+<!-- Net Zero -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden relative mb-6">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-75" data-alt="Solar panel arrays integrated into modern architecture under a bright sun with clean sharp lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYODbZmEu5gDUSzHZOcHXkurGJBllbeLtDrz1mTwqiECgxMqDK3PnxnTS-kFnFfGP9X6koy7DjVCbjMdzQzmDAg8agRJjOc9epDuVcbqng0qJYReyGUo0bHy60ak0kgMITJlFE9PDkb_XHO9oaRT8tpQ6zmmkfvfrsncBRlhuytPNbz1WCadNNVLfrwHb_uqnT3cuW6p4pGbsW1FXAfc5X58bOdrgGgXcF7k8-LPzeb97CW6LNCizcKVi8iOHCtaguV511Sxc4ofY"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex gap-2 mb-3">
+<span class="text-[10px] font-bold uppercase tracking-wider bg-surface px-2 py-1 border border-outline-variant/30 text-on-surface-variant">ESG</span>
+<span class="text-[10px] font-bold uppercase tracking-wider bg-surface px-2 py-1 border border-outline-variant/30 text-on-surface-variant">Solar PV</span>
+</div>
+<h4 class="text-lg font-bold text-primary">Net Zero</h4>
+</div>
+<!-- Retrofits -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden relative mb-6">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-75" data-alt="Close up of structural reinforcement being added to an old concrete building with visible scaffolding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4l8PRa7YhKyiwwqzAFWWSPyuR9pbIJ3mCBttAjnyyzhmZrol85tt6gx08Ji5Xi5a3uG_dHtPuzp3f_BcaY9yBz4Ho-xiO_8Kzhrivh-SfrOcv0jyRymET5znL0u71Zjkjix5Ofi8d2XO3gUM7EIBFaoarPVUd0MMi0BLvWAEKrgrx2wBwWiOiDS46rkFiHyMa7im1KsJ7eP8Nqo7arCB5y6ryIcdCj4pEwqnzzvmbDgiqlJ53F0-QZWNi2zKwHlCm0PaJBBMHS5E"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex gap-2 mb-3">
+<span class="text-[10px] font-bold uppercase tracking-wider bg-surface px-2 py-1 border border-outline-variant/30 text-on-surface-variant">Adaptive Reuse</span>
+<span class="text-[10px] font-bold uppercase tracking-wider bg-surface px-2 py-1 border border-outline-variant/30 text-on-surface-variant">LOD 500</span>
+</div>
+<h4 class="text-lg font-bold text-primary">Retrofits</h4>
+</div>
+</div>
+</section>
+<!-- Owner's Engineer Block -->
+<section class="bg-primary py-32 px-12 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-10 pointer-events-none">
+<svg height="100%" preserveaspectratio="none" viewbox="0 0 100 100" width="100%">
+<line stroke="white" stroke-width="0.1" x1="0" x2="100" y1="100" y2="0"></line>
+<line stroke="white" stroke-width="0.1" x1="20" x2="100" y1="100" y2="20"></line>
+<line stroke="white" stroke-width="0.1" x1="40" x2="100" y1="100" y2="40"></line>
+</svg>
+</div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<label class="text-[11px] uppercase tracking-[0.3em] text-on-primary-container font-bold mb-12 block">Sovereign Protection</label>
+<blockquote class="text-[40px] md:text-[56px] font-serif italic text-white leading-tight mb-16 tracking-tight">
+                    "We work exclusively for the Building Owner, not the builder."
+                </blockquote>
+<div class="flex flex-col items-center gap-8">
+<p class="text-on-primary/60 text-lg max-w-xl">
+                        Our Owners' Engineering service eliminates conflict of interest, ensuring your technical and financial objectives remain the sole priority throughout the project lifecycle.
+                    </p>
+<button class="bg-secondary text-on-secondary px-12 py-5 text-[11px] font-bold uppercase tracking-widest rounded-sm hover:scale-105 transition-all">
+                        Protect Your Investment
+                    </button>
+</div>
+</div>
+</section>
+<!-- Global Proof Section -->
+<section class="py-32 px-12">
+<div class="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20">
+<div class="lg:col-span-8">
+<div class="bg-surface-container-low aspect-video relative rounded-sm border border-outline-variant/10 overflow-hidden">
+<!-- Simulated Interactive Map -->
+<div class="absolute inset-0 bg-slate-200" data-location="Singapore" style="">
+<img class="w-full h-full object-cover opacity-50 grayscale" data-alt="Minimalist monochromatic world map texture with glowing pinpoints on major metropolitan hubs like Singapore, London, and New York" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3eRO-px-H5Tqps-axAqMyaPbw8MoDyeSnwrErCeSeqQ_wVRpjknsJE2sjvXAUbroWjMHLuUnIOHKaXTWOTCmK_SoHTQTlW9zqKMItHyQ5Vz0r8LU1jLoUQoHKrlWLe7T7C2gMTsPxNtpHiFwIyQ9kBV2qnLZjfqwhtYXeE_xbJN9yeRX17d9Ee61_FChZPscmxQMJa_TFe9872c71xB-gxNPk5ZPvP4KOtKZlZqk5iKtxXvrjTTA0BXCpBbn5iitC-SNuObvtV0c"/>
+</div>
+<div class="absolute inset-0 blueprint-grid"></div>
+<!-- Map Hotspots -->
+<div class="absolute top-1/2 left-1/3 group">
+<div class="w-3 h-3 bg-secondary rounded-full animate-pulse shadow-lg shadow-secondary/50"></div>
+<div class="absolute top-full mt-2 bg-white p-3 shadow-xl border border-outline-variant/20 hidden group-hover:block w-48">
+<div class="text-[10px] font-bold text-secondary uppercase mb-1">Central Asia</div>
+<div class="text-xs font-bold text-primary">Hyperscale Data Hub</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col justify-center">
+<h2 class="text-3xl font-bold text-primary mb-8 tracking-tight">Validated Engineering Standards</h2>
+<p class="text-on-surface-variant mb-12">Our systems are verified by the world's most rigorous certification bodies, ensuring compliance across 14 jurisdictions.</p>
+<div class="grid grid-cols-2 gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="h-12 bg-surface-container flex items-center justify-center font-bold text-xs tracking-tighter">ISO 9001:2015</div>
+<div class="h-12 bg-surface-container flex items-center justify-center font-bold text-xs tracking-tighter">LEED PLATINUM</div>
+<div class="h-12 bg-surface-container flex items-center justify-center font-bold text-xs tracking-tighter">RIBA APPROVED</div>
+<div class="h-12 bg-surface-container flex items-center justify-center font-bold text-xs tracking-tighter">ASHRAE ELITE</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 bg-[#f9f9f7]">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-[1920px] mx-auto">
+<div class="flex flex-col gap-6">
+<div class="text-lg font-bold text-[#00193c]">VG International</div>
+<p class="text-[14px] font-inter leading-relaxed text-slate-600">
+                    Precision engineering for global visionaries. Singapore Authority.
+                </p>
+<div class="flex gap-4">
+<span class="w-8 h-8 border border-outline-variant flex items-center justify-center text-primary text-xs font-bold hover:bg-primary hover:text-white cursor-pointer transition-all">LI</span>
+<span class="w-8 h-8 border border-outline-variant flex items-center justify-center text-primary text-xs font-bold hover:bg-primary hover:text-white cursor-pointer transition-all">TW</span>
+</div>
+</div>
+<div>
+<div class="text-[11px] uppercase tracking-[0.05em] font-bold text-[#00193c] mb-6">Capabilities</div>
+<ul class="flex flex-col gap-3">
+<li><a class="text-[14px] text-slate-600 hover:text-[#006a6a] transition-colors" href="#">Architecture</a></li>
+<li><a class="text-[14px] text-slate-600 hover:text-[#006a6a] transition-colors" href="#">Structural</a></li>
+<li><a class="text-[14px] text-slate-600 hover:text-[#006a6a] transition-colors" href="#">MEPF Systems</a></li>
+<li><a class="text-[14px] text-slate-600 hover:text-[#006a6a] transition-colors" href="#">Owners Engineer</a></li>
+</ul>
+</div>
+<div>
+<div class="text-[11px] uppercase tracking-[0.05em] font-bold text-[#00193c] mb-6">Expertise</div>
+<ul class="flex flex-col gap-3">
+<li><a class="text-[14px] text-slate-600 hover:text-[#006a6a] transition-colors" href="#">Data Centers</a></li>
+<li><a class="text-[14px] text-slate-600 hover:text-[#006a6a] transition-colors" href="#">Cold Storage</a></li>
+<li><a class="text-[14px] text-slate-600 hover:text-[#006a6a] transition-colors" href="#">Net Zero Retrofits</a></li>
+<li><a class="text-[14px] text-slate-600 hover:text-[#006a6a] transition-colors" href="#">Global Insights</a></li>
+</ul>
+</div>
+<div>
+<div class="text-[11px] uppercase tracking-[0.05em] font-bold text-[#00193c] mb-6">Newsletter</div>
+<p class="text-[14px] text-slate-600 mb-6">Technical updates for complex systems.</p>
+<div class="flex">
+<input class="bg-white border border-outline-variant p-3 text-sm focus:ring-1 focus:ring-secondary focus:border-secondary outline-none w-full" placeholder="Email Address" type="email"/>
+<button class="bg-primary text-white px-4 hover:bg-secondary transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="px-12 py-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 max-w-[1920px] mx-auto">
+<div class="text-[11px] uppercase tracking-[0.05em] text-slate-500">
+                © 2024 VG International. All rights reserved. Engineering Authority.
+            </div>
+<div class="flex gap-8">
+<a class="text-[11px] uppercase tracking-[0.05em] text-slate-500 hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-[11px] uppercase tracking-[0.05em] text-slate-500 hover:text-primary" href="#">Legal Terms</a>
+<a class="text-[11px] uppercase tracking-[0.05em] text-slate-500 hover:text-primary" href="#">Sustainability Report</a>
+</div>
+</div>
+</footer>
+</body></html>

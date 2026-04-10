@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Cormorant+Garamond:ital,wght@1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#004f58",
+                    "tertiary-fixed": "#9cf0ff",
+                    "surface-variant": "#e1e2e4",
+                    "tertiary": "#000000",
+                    "primary": "#021c36", // Deep Navy
+                    "surface-container-highest": "#e1e2e4",
+                    "surface-container-high": "#e7e8ea",
+                    "on-primary-container": "#6f85a3",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#00616d",
+                    "secondary-fixed": "#9cf0ff",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#00e3fd", // Cyan Highlight
+                    "on-secondary-fixed-variant": "#004f58",
+                    "tertiary-container": "#001f24",
+                    "inverse-on-surface": "#f0f1f3",
+                    "surface": "#f8f9fb",
+                    "surface-container-low": "#f3f4f6",
+                    "background": "#f8f9fb",
+                    "inverse-primary": "#b1c8e9",
+                    "inverse-surface": "#2e3132",
+                    "tertiary-fixed-dim": "#00daf3",
+                    "secondary": "#0091a2",
+                    "outline": "#74777e",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#001f24",
+                    "on-tertiary-fixed": "#001f24",
+                    "on-primary-fixed": "#021c36",
+                    "surface-container": "#edeef0",
+                    "surface-bright": "#f8f9fb",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#324863",
+                    "secondary-fixed-dim": "#00daf3",
+                    "outline-variant": "#c4c6ce",
+                    "primary-fixed": "#d2e4ff",
+                    "on-background": "#191c1e",
+                    "surface-dim": "#d9dadc",
+                    "surface-tint": "#4a607c",
+                    "on-surface": "#191c1e",
+                    "on-tertiary-container": "#0091a2",
+                    "primary-fixed-dim": "#b1c8e9",
+                    "on-surface-variant": "#43474d",
+                    "primary-container": "#021c36",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "2px",
+                    "xl": "4px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"],
+                    "serif": ["Cormorant Garamond"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .reveal-item {
+            animation: reveal 0.8s ease-out forwards;
+        }
+        .dot-grid {
+            background-image: radial-gradient(circle, #00e3fd 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.1;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(2, 28, 54, 0.05);
+        }
+        .glass-overlay {
+            background: linear-gradient(180deg, rgba(2, 28, 54, 0) 0%, rgba(2, 28, 54, 0.8) 100%);
+        }
+        .chart-glow {
+            filter: drop-shadow(0 0 12px rgba(0, 227, 253, 0.4));
+        }
+        .thin-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(2, 28, 54, 0.1), transparent);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-primary/5">
+<div class="flex justify-between items-center w-full px-8 py-5 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="architecture">architecture</span>
+<span class="text-xl font-extrabold tracking-[0.1em] text-primary font-headline">VG INTERNATIONAL</span>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-secondary-container font-bold text-xs tracking-widest border-b-2 border-secondary-container py-1" href="#">HOME</a>
+<a class="text-primary/60 font-bold text-xs tracking-widest hover:text-primary transition-colors py-1" href="#">SOLUTIONS</a>
+<a class="text-primary/60 font-bold text-xs tracking-widest hover:text-primary transition-colors py-1" href="#">IMPACT</a>
+<a class="text-primary/60 font-bold text-xs tracking-widest hover:text-primary transition-colors py-1" href="#">PORTFOLIO</a>
+</div>
+<button class="bg-primary text-white px-7 py-3 rounded-none font-bold text-[10px] tracking-[0.2em] uppercase hover:bg-secondary transition-all">
+            Request Proposal
+        </button>
+</div>
+</nav>
+<main class="relative pt-24 overflow-x-hidden">
+<!-- Background Elements -->
+<div class="absolute inset-0 dot-grid pointer-events-none"></div>
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center px-8">
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-7 z-10 reveal-item">
+<div class="inline-flex items-center gap-3 mb-6">
+<div class="h-[1px] w-12 bg-secondary-container"></div>
+<span class="text-[10px] font-black uppercase tracking-[0.3em] text-secondary">Advanced MEPF Systems</span>
+</div>
+<h1 class="font-headline font-extrabold text-6xl lg:text-8xl leading-[0.95] tracking-tighter text-primary mb-10">
+                    Precision <br/>Engineering <br/><span class="text-secondary-container">Transparency</span>.
+                </h1>
+<p class="text-lg text-on-surface-variant max-w-xl mb-12 leading-relaxed">
+                    We redefine the complexity of modern infrastructure through hyper-accurate digital twins and owner-centric engineering advocacy.
+                </p>
+<div class="flex flex-wrap gap-6">
+<button class="bg-primary text-white px-10 py-5 rounded-none flex items-center gap-4 font-bold text-xs tracking-widest uppercase transition-all hover:bg-black group">
+                        Begin Consultation
+                        <span class="material-symbols-outlined text-secondary-container text-lg group-hover:translate-x-2 transition-transform" data-icon="east">east</span>
+</button>
+<button class="border border-primary/10 px-10 py-5 rounded-none font-bold text-xs tracking-widest uppercase flex items-center gap-3 hover:bg-white transition-all">
+<span class="material-symbols-outlined text-primary" data-icon="play_circle">play_circle</span>
+                        Reel 2024
+                    </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative h-full flex justify-center lg:justify-end items-center reveal-item" style="animation-delay: 0.2s;">
+<div class="relative w-full max-w-lg">
+<!-- Hyper-realistic Architectural Render Placeholder -->
+<div class="relative z-10 border border-primary/5 p-2 bg-white shadow-2xl overflow-hidden">
+<img alt="High-fidelity architectural render" class="w-full h-[600px] object-cover filter contrast-[1.05]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSCGzz4j6ccNGI_KSBURyVFTKExESJwDWcFhprr7CvqYx5aYlTGvCEvdNWNqKDKnJcWmPE7b7xxzezKlgPEFIMS45iI9Jc3Dg5aJKt67klRU5_VGvUpuPiUeOlBIOfA_cyGvMO3GyXGfhb4BI07DaPb2vaBHDp2NX6wu95DgRq9y_siv82I8QEocQ_u1cnsvF3XNuGcJMozYFPRx2zBFZNGAZdVdl2zgkmB_TXPm1VWadg1ZpZ_ODbflwubztGo0tErhN9Lw5g04c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+<!-- Floating Technical Data Overlay -->
+<div class="absolute bottom-8 left-8 glass-card p-6 border-l-4 border-l-secondary-container">
+<p class="text-[9px] uppercase tracking-widest font-black text-secondary mb-2">Real-time Efficiency</p>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-headline font-black text-primary">99.2%</span>
+<span class="text-[10px] font-bold text-green-600 mb-1">↑ 1.4%</span>
+</div>
+</div>
+</div>
+<!-- Decorative 3D elements -->
+<div class="absolute -top-12 -right-12 w-32 h-32 border border-secondary-container/20 rotate-45 pointer-events-none"></div>
+<div class="absolute -bottom-8 -left-8 w-64 h-64 bg-secondary-container/5 blur-3xl rounded-full pointer-events-none"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Thin Divider -->
+<div class="thin-divider max-w-7xl mx-auto"></div>
+<!-- Specialism Grid Section -->
+<section class="py-32 px-8 bg-white">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+<div class="max-w-2xl reveal-item">
+<span class="text-[10px] font-black uppercase tracking-[0.4em] text-secondary mb-4 block">Vertical Expertise</span>
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-primary tracking-tight">Optimized Environments for Critical Operations</h2>
+</div>
+<a class="text-xs font-bold tracking-[0.2em] uppercase text-primary border-b border-primary/20 pb-2 hover:border-secondary-container transition-all reveal-item" href="#">Explore Portfolios</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Data Centers -->
+<div class="group relative aspect-[3/4] overflow-hidden reveal-item" style="animation-delay: 0.1s;">
+<img alt="Data Center" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkjj5Zeuy8emqFWfUR0HF-L2kaeLijeDUQMcab_e3mnITqjf_cTprgtRjzqcJIgrdl-byMvG4w3IpK0_kFT5bO6a6jLlza_c1zcv3TqnPk9Y5DAWwYepqGwpKBroH4h6p8AbYKwVmfN676nS4TqOlB1giu9CF4LvNLnq5XgZm35fGoKVOUFMBNfrL1IARvZyCnJnOfCPx7KFo4A50WPR6TIThHcZ7xfelFmATNtBbTiRpEJosMk-lSjmsL6X8Rllj5jE_WWvrEoug"/>
+<div class="absolute inset-0 glass-overlay"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="material-symbols-outlined text-secondary-container text-3xl mb-4 opacity-0 group-hover:opacity-100 transition-opacity" data-icon="database">database</span>
+<h3 class="text-white text-xl font-bold font-headline mb-2">Data Centers</h3>
+<p class="text-white/60 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">Tier III+ resiliency and high-density liquid cooling synchronization.</p>
+</div>
+</div>
+<!-- Cold Storage -->
+<div class="group relative aspect-[3/4] overflow-hidden reveal-item" style="animation-delay: 0.2s;">
+<img alt="Logistics" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9__pLf5Po4NHpiW6o2clqYBWam1MknjedbiaLmQDGj6GYPfFEf2mAW8wEsvAKjGlCcvOJH6L5hp1A2K0Hd7W3rZt3MT-V7WQhcwek84kuwNUpLA35WVrd9qUZm6AFMEkI56Ewix7vbLdEpVlcr2K0Uv_lcxuxWAv9RlPQCNA4FD8cK7daICcOvzjS0j1uFB1WSnnMjWf9mCFPDvHuNMtQ933L6daG_muRghCdG0zUqjDLgey9V4XyWOGRtvoAV_njqlcs1SGhjis"/>
+<div class="absolute inset-0 glass-overlay"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="material-symbols-outlined text-secondary-container text-3xl mb-4 opacity-0 group-hover:opacity-100 transition-opacity" data-icon="ac_unit">ac_unit</span>
+<h3 class="text-white text-xl font-bold font-headline mb-2">Cold Storage</h3>
+<p class="text-white/60 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">Ultra-low temperature thermal management for global pharma supply chains.</p>
+</div>
+</div>
+<!-- Commercial -->
+<div class="group relative aspect-[3/4] overflow-hidden reveal-item" style="animation-delay: 0.3s;">
+<img alt="Corporate" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWyxF_gOy0kZ9lMB_WSMvHjJ9UTYINW7qXH3vSHPDE9L_RWTYBBeAs_M6Ux7Zotnb7qV1UgXVQHkZV33xLyN7BH8kFgJBMnqyChnEgxiRK6KQGiu7cMqid8gwaP2Fx5RbX3BTWNe_fyvNRAFPQjhS0dUq8BEjJHuZm-gslh98qOVmjZgPZ1OMWxdZhjSfnfbcP0HSbYyAXa6kSDk2vXldisAq8V-irDnCthHiAJ7-9hf59hmM66eNeQLOiWrHJRBvTvJm-puy75-U"/>
+<div class="absolute inset-0 glass-overlay"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="material-symbols-outlined text-secondary-container text-3xl mb-4 opacity-0 group-hover:opacity-100 transition-opacity" data-icon="apartment">apartment</span>
+<h3 class="text-white text-xl font-bold font-headline mb-2">Corporate Assets</h3>
+<p class="text-white/60 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">Premium office performance and smart building IoT integration.</p>
+</div>
+</div>
+<!-- Institutional -->
+<div class="group relative aspect-[3/4] overflow-hidden reveal-item" style="animation-delay: 0.4s;">
+<img alt="Institution" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYwJBZEcHbJrQZ0TjIyNSuM-glRnpzVZT5uARjH6xPVTnnzPhsdEGtjnLSNB6JxJX4MwZcXu-Z46sC8oG_pVQyakqoCwGg-Ry_fgRfGXaOhz95jxjdsYex_eYNV3fQVvKSzRiXEcDQCWt5suf74lDh4ka_886hT2y6oWmiopXquOLyjlDfA0GKR5YyjbBz-ZommdoNEijE0IYKyzAUQ9GdeYFtMYSwnR7qn5eX8G9ZxGr4y-oN1-79etr_fFHFoRi-ZJEQGCG9gXE"/>
+<div class="absolute inset-0 glass-overlay"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="material-symbols-outlined text-secondary-container text-3xl mb-4 opacity-0 group-hover:opacity-100 transition-opacity" data-icon="history_edu">history_edu</span>
+<h3 class="text-white text-xl font-bold font-headline mb-2">Heritage Retrofit</h3>
+<p class="text-white/60 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">Preserving architectural legacy with invisible high-tech utility modernization.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Owner’s Engineering Section -->
+<section class="py-32 px-8 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="reveal-item">
+<span class="text-[10px] font-black uppercase tracking-[0.4em] text-secondary mb-6 block">Our Advocacy</span>
+<blockquote class="font-serif italic text-5xl lg:text-6xl text-primary leading-[1.1] mb-12">
+                        "Engineering shouldn't just be functional—it must be <span class="text-secondary-container not-italic font-headline font-black">Accountable</span>."
+                    </blockquote>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-12 border-l-2 border-primary/10 pl-8">
+                        We represent the owner's best interest against technical shortcuts. Our data-driven transparency ensures every dollar spent translates into operational longevity.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-container text-2xl font-black" data-icon="verified">verified</span>
+<div>
+<h6 class="font-bold text-primary text-sm uppercase tracking-widest mb-1">Risk Mitigation</h6>
+<p class="text-xs text-on-surface-variant">Eliminating field-clashes through 1:1 BIM fidelity.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-container text-2xl font-black" data-icon="analytics">analytics</span>
+<div>
+<h6 class="font-bold text-primary text-sm uppercase tracking-widest mb-1">Cost Lifecycle</h6>
+<p class="text-xs text-on-surface-variant">Focusing on 25-year efficiency, not just 1-day cost.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative reveal-item" style="animation-delay: 0.2s;">
+<div class="glass-card p-10 shadow-[0_40px_100px_rgba(2,28,54,0.12)] border border-white">
+<div class="flex justify-between items-center mb-16">
+<div>
+<h4 class="text-primary font-headline font-black text-xl tracking-tight uppercase">Operational Insight</h4>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-[0.2em] mt-1">Risk vs. Asset Value Curve</p>
+</div>
+<div class="flex gap-1.5">
+<div class="w-2 h-2 rounded-full bg-secondary-container chart-glow"></div>
+<div class="w-2 h-2 rounded-full bg-primary/20"></div>
+</div>
+</div>
+<!-- Professional Data Viz -->
+<div class="relative h-64 flex items-end justify-between gap-4">
+<div class="absolute inset-0 flex flex-col justify-between opacity-5">
+<div class="w-full h-[1px] bg-primary"></div>
+<div class="w-full h-[1px] bg-primary"></div>
+<div class="w-full h-[1px] bg-primary"></div>
+<div class="w-full h-[1px] bg-primary"></div>
+</div>
+<div class="w-full flex items-end justify-between px-2 gap-4">
+<div class="w-1/5 bg-primary/10 h-[30%] relative group transition-all hover:h-[35%] cursor-help">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[9px] font-black text-primary uppercase">Risk High</div>
+</div>
+<div class="w-1/5 bg-primary/10 h-[55%] relative group transition-all hover:h-[60%] cursor-help"></div>
+<div class="w-1/5 bg-primary/10 h-[45%] relative group transition-all hover:h-[50%] cursor-help"></div>
+<div class="w-1/5 bg-secondary-container h-[95%] relative chart-glow group transition-all cursor-help">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 text-[10px] font-black text-primary uppercase tracking-widest whitespace-nowrap">Peak Value</div>
+</div>
+<div class="w-1/5 bg-primary/10 h-[70%] relative group transition-all hover:h-[75%] cursor-help"></div>
+</div>
+</div>
+<div class="flex justify-between mt-8 text-[9px] font-black uppercase tracking-[0.3em] text-primary/40">
+<span>Concept</span>
+<span>Design</span>
+<span>Build</span>
+<span>Operate</span>
+</div>
+</div>
+<!-- Tech accents -->
+<div class="absolute -top-10 -right-10 w-24 h-24 border-t border-r border-secondary-container pointer-events-none opacity-40"></div>
+<div class="absolute -bottom-10 -left-10 w-24 h-24 border-b border-l border-primary/20 pointer-events-none opacity-40"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Global Impact Statistics -->
+<section class="py-24 px-8 border-y border-primary/5">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-16">
+<div class="flex-1 text-center md:text-left reveal-item">
+<h4 class="text-6xl font-headline font-black text-primary mb-2">47<span class="text-secondary-container">+</span></h4>
+<p class="text-[10px] font-black uppercase tracking-[0.4em] text-secondary">Major Infrastructure Projects</p>
+</div>
+<div class="w-[1px] h-20 bg-primary/10 hidden md:block"></div>
+<div class="flex-1 text-center md:text-left reveal-item" style="animation-delay: 0.1s;">
+<h4 class="text-6xl font-headline font-black text-primary mb-2">12</h4>
+<p class="text-[10px] font-black uppercase tracking-[0.4em] text-secondary">Global Operating Markets</p>
+</div>
+<div class="w-[1px] h-20 bg-primary/10 hidden md:block"></div>
+<div class="flex-1 text-center md:text-left reveal-item" style="animation-delay: 0.2s;">
+<h4 class="text-6xl font-headline font-black text-primary mb-2">320<span class="text-secondary-container">MW</span></h4>
+<p class="text-[10px] font-black uppercase tracking-[0.4em] text-secondary">Critical Load Managed</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-primary text-white pt-24 pb-12 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+<div class="md:col-span-2">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-secondary-container text-4xl" data-icon="architecture">architecture</span>
+<span class="text-2xl font-extrabold tracking-[0.1em] font-headline">VG INTERNATIONAL</span>
+</div>
+<p class="text-white/50 text-sm max-w-sm leading-relaxed mb-10">
+                    Precision engineering for the world's most complex built environments. We provide clarity where others see chaos.
+                </p>
+<div class="flex gap-6">
+<a class="text-secondary-container hover:text-white transition-colors" href="#"><span class="material-symbols-outlined" data-icon="potted_plant">potted_plant</span></a>
+<a class="text-secondary-container hover:text-white transition-colors" href="#"><span class="material-symbols-outlined" data-icon="language">language</span></a>
+<a class="text-secondary-container hover:text-white transition-colors" href="#"><span class="material-symbols-outlined" data-icon="grid_view">grid_view</span></a>
+</div>
+</div>
+<div>
+<h6 class="text-[10px] font-black uppercase tracking-[0.3em] mb-8 text-secondary-container">SOLUTIONS</h6>
+<ul class="space-y-4 text-xs font-bold tracking-widest text-white/60">
+<li><a class="hover:text-white transition-colors" href="#">DATA CENTERS</a></li>
+<li><a class="hover:text-white transition-colors" href="#">COLD STORAGE</a></li>
+<li><a class="hover:text-white transition-colors" href="#">OWNER'S REP</a></li>
+<li><a class="hover:text-white transition-colors" href="#">BIM MODELING</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-[10px] font-black uppercase tracking-[0.3em] mb-8 text-secondary-container">ENGAGE</h6>
+<ul class="space-y-4 text-xs font-bold tracking-widest text-white/60">
+<li><a class="hover:text-white transition-colors" href="#">CAREERS</a></li>
+<li><a class="hover:text-white transition-colors" href="#">CONTACT</a></li>
+<li><a class="hover:text-white transition-colors" href="#">PRIVACY</a></li>
+<li><a class="hover:text-white transition-colors" href="#">LEGAL</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">© 2024 VG INTERNATIONAL ENGINEERING GROUP. ALL RIGHTS RESERVED.</p>
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">BUILT FOR PRECISION</p>
+</div>
+</div>
+</footer>
+<script>
+    // Simple intersection observer for reveal animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-item');
+                entry.target.style.opacity = 1;
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal-item').forEach(item => {
+        item.style.opacity = 0;
+        observer.observe(item);
+    });
+</script>
+</body></html>

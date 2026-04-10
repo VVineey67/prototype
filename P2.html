@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VG International | Precision Architecture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f2f4f6",
+                    "on-tertiary-fixed-variant": "#004f59",
+                    "on-primary-fixed-variant": "#24467c",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#9feffe",
+                    "inverse-primary": "#abc7ff",
+                    "on-background": "#191c1e",
+                    "tertiary": "#001d22",
+                    "surface-variant": "#e0e3e5",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2d3133",
+                    "on-surface-variant": "#43474f",
+                    "tertiary-container": "#00343b",
+                    "on-error-container": "#93000a",
+                    "secondary": "#00677d",
+                    "primary-fixed-dim": "#abc7ff",
+                    "on-surface": "#191c1e",
+                    "on-secondary-fixed-variant": "#004e5f",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#83d3e1",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#3e5e95",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "background": "#f7f9fb",
+                    "on-tertiary-fixed": "#001f24",
+                    "secondary-fixed-dim": "#4cd6fb",
+                    "on-secondary-fixed": "#001f27",
+                    "surface-container-highest": "#e0e3e5",
+                    "inverse-on-surface": "#eff1f3",
+                    "primary": "#00193c",
+                    "on-secondary-container": "#005c70",
+                    "outline": "#747781",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#f7f9fb",
+                    "secondary-container": "#50d9fe",
+                    "primary-fixed": "#d7e2ff",
+                    "outline-variant": "#c4c6d1",
+                    "on-tertiary-container": "#50a1b0",
+                    "surface-container": "#eceef0",
+                    "surface-dim": "#d8dadc",
+                    "secondary-fixed": "#b3ebff",
+                    "surface": "#f7f9fb",
+                    "on-primary-fixed": "#001b3f",
+                    "on-primary-container": "#7796d1",
+                    "primary-container": "#002d62"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .perspective-grid {
+            background-image: linear-gradient(to right, rgba(196, 198, 209, 0.1) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(196, 198, 209, 0.1) 1px, transparent 1px);
+            background-size: 60px 60px;
+            transform: perspective(1000px) rotateX(60deg);
+            transform-origin: top;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px -10px rgba(0, 45, 98, 0.1),
+                        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+        }
+        .slab-3d {
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            transition: all 0.5s ease;
+        }
+        .slab-3d:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg) translateZ(20px);
+        }
+        .blueprint-plane {
+            background: repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(0, 180, 216, 0.1) 20px),
+                        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(0, 180, 216, 0.1) 20px);
+            border: 1px solid rgba(0, 180, 216, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background overflow-x-hidden">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-white/40 dark:bg-[#00193c]/40 backdrop-blur-xl border-b border-[#c4c6d1]/20 shadow-[0_40px_60px_-10px_rgba(25,28,30,0.06)]">
+<div class="flex justify-between items-center px-12 py-4 w-full max-w-screen-2xl mx-auto font-['Manrope'] tracking-tight font-semibold">
+<div class="text-2xl font-black tracking-tighter text-[#002D62] dark:text-white uppercase">VG International</div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-[#00B4D8] border-b-2 border-[#00B4D8] pb-1 transition-colors duration-300" href="#">Solutions</a>
+<a class="text-[#002D62] dark:text-slate-300 hover:text-[#00B4D8] transition-colors duration-300" href="#">Architecture</a>
+<a class="text-[#002D62] dark:text-slate-300 hover:text-[#00B4D8] transition-colors duration-300" href="#">Innovation</a>
+<a class="text-[#002D62] dark:text-slate-300 hover:text-[#00B4D8] transition-colors duration-300" href="#">Insights</a>
+<a class="text-[#002D62] dark:text-slate-300 hover:text-[#00B4D8] transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-[#002D62] text-white px-8 py-2 rounded-md font-bold hover:bg-[#00B4D8] transition-all duration-300 active:scale-95">
+                Connect
+            </button>
+</div>
+</nav>
+<!-- Perspective Grid Background (Floating) -->
+<div class="fixed inset-0 -z-10 pointer-events-none opacity-40">
+<div class="perspective-grid absolute w-[200%] h-[200%] -left-1/2 top-0"></div>
+</div>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden px-12">
+<div class="absolute inset-0 bg-gradient-to-br from-primary via-primary-container to-background opacity-5"></div>
+<!-- Hero Content Grid -->
+<div class="relative z-10 w-full max-w-screen-2xl grid lg:grid-cols-2 gap-16 items-center">
+<!-- Headline Side -->
+<div class="space-y-8">
+<div class="inline-flex items-center gap-3 px-3 py-1 bg-secondary-fixed/30 border border-secondary/20 rounded-full">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-xs font-bold tracking-widest text-secondary uppercase font-label">Engineering the Future</span>
+</div>
+<h1 class="text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] text-primary">
+                    Spatial <span class="text-on-primary-container">Engineering</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-xl font-light leading-relaxed">
+                    We construct digital environments defined by structural integrity and light. Transforming abstract concepts into immersive physical infrastructure.
+                </p>
+<div class="flex items-center gap-6 pt-4">
+<button class="px-10 py-4 bg-primary text-on-primary font-bold rounded-lg shadow-[0_20px_40px_-10px_rgba(0,25,60,0.3)] hover:translate-y-[-2px] transition-all">Explore Projects</button>
+<button class="flex items-center gap-2 group font-bold text-primary">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="play_circle">play_circle</span>
+                        The Vision
+                    </button>
+</div>
+</div>
+<!-- 3D Render Side -->
+<div class="relative flex items-center justify-center w-full aspect-square">
+    <div id="building-container" class="w-full h-full lg:scale-[1.1] drop-shadow-[0_40px_80px_rgba(0,180,216,0.3)] cursor-grab relative z-10"></div>
+    <script>
+        (function initBuilding() {
+            const container = document.getElementById('building-container');
+            if(!container || typeof THREE === 'undefined' || !THREE.OrbitControls) {
+                setTimeout(initBuilding, 100);
+                return;
+            }
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
+            camera.position.set(4, 5, 6);
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            const width = container.clientWidth || 400;
+            renderer.setSize(width, width);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            container.appendChild(renderer.domElement);
+
+            const controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 1.5;
+            controls.enableZoom = false;
+
+            // Lighting setup for glass reflections
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+            scene.add(ambientLight);
+            
+            const mainLight = new THREE.DirectionalLight(0xffffff, 1.5);
+            mainLight.position.set(5, 10, 7);
+            scene.add(mainLight);
+
+            const cyanLight = new THREE.DirectionalLight(0x00b4d8, 2);
+            cyanLight.position.set(-5, 0, -5);
+            scene.add(cyanLight);
+
+            // Procedural Building Generation
+            const buildingGroup = new THREE.Group();
+
+            const glassMaterial = new THREE.MeshPhysicalMaterial({
+                color: 0xe0f2fe,
+                metalness: 0.8,
+                roughness: 0.1,
+                transparent: true,
+                opacity: 0.4,
+                transmission: 0.9,
+                ior: 1.5,
+                reflectivity: 1
+            });
+
+            const steelMaterial = new THREE.MeshStandardMaterial({
+                color: 0x023e8a,
+                metalness: 0.9,
+                roughness: 0.3
+            });
+
+            const coreMaterial = new THREE.MeshStandardMaterial({
+                color: 0x001d3d,
+                metalness: 0.7,
+                roughness: 0.5
+            });
+
+            const floors = 10;
+            const w = 1.8;
+            const d = 1.8;
+            const h = 0.45;
+
+            // Central Core (Structural/MEPF Integration representation)
+            const coreMesh = new THREE.Mesh(new THREE.BoxGeometry(0.6, floors * h + 0.2, 0.6), coreMaterial);
+            coreMesh.position.y = (floors * h) / 2;
+            buildingGroup.add(coreMesh);
+
+            // Constructing slabs, columns, and glass wrapper
+            for(let i=0; i<floors; i++) {
+                // Slabs
+                const slab = new THREE.Mesh(new THREE.BoxGeometry(w, 0.04, d), steelMaterial);
+                slab.position.y = i * h;
+                buildingGroup.add(slab);
+
+                // Glass Layer (Outer Shell)
+                if(i < floors - 1) {
+                    const glass = new THREE.Mesh(new THREE.BoxGeometry(w, h - 0.04, d), glassMaterial);
+                    glass.position.y = i * h + (h/2);
+                    buildingGroup.add(glass);
+                }
+
+                // Inner MEPF/Structural Columns
+                const pos = [[-w/2.2, d/2.2], [-w/2.2, -d/2.2], [w/2.2, d/2.2], [w/2.2, -d/2.2]];
+                pos.forEach(p => {
+                    const col = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, h, 8), steelMaterial);
+                    col.position.set(p[0], i * h + (h/2), p[1]);
+                    buildingGroup.add(col);
+                });
+            }
+
+            // High-Tech Roof Spire
+            const spire = new THREE.Mesh(new THREE.CylinderGeometry(0.01, 0.03, 1.2, 8), steelMaterial);
+            spire.position.y = (floors * h) + 0.6;
+            buildingGroup.add(spire);
+
+            // Floating Platform
+            const base = new THREE.Mesh(new THREE.BoxGeometry(2.5, 0.1, 2.5), steelMaterial);
+            base.position.y = -0.05;
+            buildingGroup.add(base);
+
+            // Center in camera
+            buildingGroup.position.y = -(floors * h) / 2 + 0.5;
+            scene.add(buildingGroup);
+
+            function animate() {
+                requestAnimationFrame(animate);
+                controls.update();
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // Handle Resize
+            window.addEventListener('resize', () => {
+                if(container.clientWidth) {
+                    renderer.setSize(container.clientWidth, container.clientWidth);
+                    camera.aspect = 1;
+                    camera.updateProjectionMatrix();
+                }
+            });
+        })();
+    </script>
+</div>
+</div>
+</section>
+<!-- Core Disciplines: 3D Slab Cards -->
+<section class="py-32 px-12 bg-surface-container-low relative overflow-hidden">
+<div class="max-w-screen-2xl mx-auto">
+<div class="mb-20">
+<span class="text-label text-secondary font-bold tracking-[0.2em] uppercase text-xs">Core Disciplines</span>
+<h2 class="text-5xl font-black text-primary mt-2">Architectural Verticals</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Slab 1 -->
+<div class="slab-3d glass-card p-10 rounded-xl relative group">
+<div class="absolute -top-4 -left-4 w-12 h-12 bg-primary flex items-center justify-center rounded-lg shadow-lg">
+<span class="material-symbols-outlined text-white" data-icon="domain" data-weight="fill">domain</span>
+</div>
+<div class="h-40 w-full mb-8 rounded-lg overflow-hidden relative">
+<img alt="Urban Planning" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of a 3D architectural model showing urban planning density and clean modern design lines in soft gray tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSihiqmgGiuPLLHPxPlqqWZi0JP4ZEejQskjFpohPp3CSpRLmXDYdk6MsGDVoP3NXwWuhCHF8PWymynhk0PXW5gkRlXlj5QrIeqW1iNkeFi_eNcCXifBugJhAHkPiz6QhkrGFvweqc7mAB9O_dgh_gT-QZW8Go2QH_PLwZM1lBWlkAuk6EtorXvIBBBFPXIpKWX8onzX_wXFPLDqFqK2N4IR_-Nzf-gbJ9rFk8Nk67krzcz7iwX6jRfFmja_T57glyoXzcPV-iyl3p"/>
+<div class="absolute inset-0 bg-secondary/10 mix-blend-overlay"></div>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-4">Urban Infrastructure</h3>
+<p class="text-on-surface-variant font-light leading-relaxed mb-6">Designing high-density living systems with ecological sustainability at the core.</p>
+<div class="flex justify-between items-end border-t border-outline-variant/20 pt-6">
+<span class="text-xs font-mono text-outline uppercase tracking-wider">SEC-01 // ALPHA</span>
+<span class="material-symbols-outlined text-secondary" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+<!-- Slab 2 -->
+<div class="slab-3d glass-card p-10 rounded-xl relative group" style="transition-delay: 100ms;">
+<div class="absolute -top-4 -left-4 w-12 h-12 bg-primary flex items-center justify-center rounded-lg shadow-lg">
+<span class="material-symbols-outlined text-white" data-icon="precision_manufacturing" data-weight="fill">precision_manufacturing</span>
+</div>
+<div class="h-40 w-full mb-8 rounded-lg overflow-hidden relative">
+<img alt="Technical Engineering" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Macro photo of engineering blueprint and technical metal components with cool blue studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGcNoVk5n4z1WSm5uEYrsqy8Hkii1tFDS4_XSwiAAotgn_NsATxXBlhMqxyFFkpJou3NdQgADRraq2_C0hst78UwFKdKDzpsx_xRRbT9oUERWqwu7F0nbA9A0zUZ8gaombRI6IL3HozmiOBwcXTZS2qdSyIRv3Fqhb8fElasDlUxHBabww8A3zdMxJHJlmhw6zxi_WI4WAFQGOAt0RQFNF5md6PIfAHTS8GjabwqLquu7rwTJooQvtt6hoIf3yKvEx-QmHnajA3aKM"/>
+<div class="absolute inset-0 bg-secondary/10 mix-blend-overlay"></div>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-4">Spatial Tech</h3>
+<p class="text-on-surface-variant font-light leading-relaxed mb-6">Integrating IoT and smart-glass technologies into the structural facade of modern developments.</p>
+<div class="flex justify-between items-end border-t border-outline-variant/20 pt-6">
+<span class="text-xs font-mono text-outline uppercase tracking-wider">SEC-02 // DELTA</span>
+<span class="material-symbols-outlined text-secondary" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+<!-- Slab 3 -->
+<div class="slab-3d glass-card p-10 rounded-xl relative group" style="transition-delay: 200ms;">
+<div class="absolute -top-4 -left-4 w-12 h-12 bg-primary flex items-center justify-center rounded-lg shadow-lg">
+<span class="material-symbols-outlined text-white" data-icon="eco" data-weight="fill">eco</span>
+</div>
+<div class="h-40 w-full mb-8 rounded-lg overflow-hidden relative">
+<img alt="Sustainable Energy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Interior of a sustainable greenhouse with modern steel architecture and lush green plants at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDduhqyymYrpY77DcjsyLG56KBl9MId3AkFcdlQnCbvkxuh1fajhFjSirKWX2QQG_5LyUGw8Q6-Y64tDpnkXzAMcrwRK2PRENVliy1qYlbyFIy_jntzEjDXy3ENU4xej2AMuKhIuw3jB-rMsvNMjz-KUcqPSWy3fkeoFNMkJ3_k1UmcoglNZgJSLxnVEj6vpYOCvK2wStm09ZoiUeFHFBqD1Fs3ibWfzGC8rwFvSZBMnEs8zc3EHs-q4FyFFoVPChGJztl0GRFlRgO"/>
+<div class="absolute inset-0 bg-secondary/10 mix-blend-overlay"></div>
+</div>
+<h3 class="text-2xl font-bold text-primary mb-4">Bio-Centric Labs</h3>
+<p class="text-on-surface-variant font-light leading-relaxed mb-6">Researching the intersection of organic growth and static architectural framework.</p>
+<div class="flex justify-between items-end border-t border-outline-variant/20 pt-6">
+<span class="text-xs font-mono text-outline uppercase tracking-wider">SEC-03 // GAMMA</span>
+<span class="material-symbols-outlined text-secondary" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Research Section: 3D Visualization -->
+<section class="py-32 px-12 bg-white relative overflow-hidden">
+<div class="max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center gap-24">
+<div class="flex-1 space-y-10">
+<div class="space-y-4">
+<span class="text-xs font-mono text-secondary tracking-widest uppercase">Global Research Node 04</span>
+<h2 class="text-5xl font-black text-primary tracking-tighter">Precision in Every <br/>Dimension</h2>
+</div>
+<p class="text-on-surface-variant leading-relaxed font-light text-lg">
+                    Our R&amp;D division utilizes spatial data to optimize building performance. We don't just build structures; we architect experiences informed by billions of data points.
+                </p>
+<!-- 3D Extruded Data Bar Visualization (HTML/CSS) -->
+<div class="space-y-6 pt-6">
+<div class="flex items-end gap-2 h-48 border-b border-outline-variant/30 pb-4">
+<div class="flex-1 bg-primary h-[40%] relative group cursor-help transition-all hover:brightness-125">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 text-xs font-mono text-primary opacity-0 group-hover:opacity-100 transition-opacity">72% Efficiency</div>
+</div>
+<div class="flex-1 bg-on-primary-container h-[65%] relative group cursor-help transition-all hover:brightness-125"></div>
+<div class="flex-1 bg-secondary h-[85%] relative group cursor-help transition-all hover:brightness-125">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 text-xs font-mono text-secondary opacity-0 group-hover:opacity-100 transition-opacity">94% Stability</div>
+</div>
+<div class="flex-1 bg-primary h-[55%] relative group cursor-help transition-all hover:brightness-125"></div>
+<div class="flex-1 bg-on-primary-container h-[95%] relative group cursor-help transition-all hover:brightness-125"></div>
+</div>
+<div class="flex justify-between text-[10px] font-mono text-outline uppercase tracking-widest px-2">
+<span>Phase 1</span>
+<span>Phase 2</span>
+<span>Phase 3</span>
+<span>Phase 4</span>
+<span>Phase 5</span>
+</div>
+</div>
+</div>
+<!-- Global Reach Node Visualization -->
+<div class="flex-1 relative flex items-center justify-center min-h-[400px]">
+    <!-- Native 3D Earth Model Generation -->
+    <div id="earth-container" class="w-full max-w-sm aspect-square lg:scale-[1.2] drop-shadow-[0_20px_50px_rgba(0,180,216,0.3)] cursor-grab"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script>
+        (function initEarth() {
+            const container = document.getElementById('earth-container');
+            if(!container || typeof THREE === 'undefined' || !THREE.OrbitControls) {
+                setTimeout(initEarth, 100);
+                return;
+            }
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
+            camera.position.z = 2.8;
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            const width = container.clientWidth || 300;
+            renderer.setSize(width, width);
+            container.appendChild(renderer.domElement);
+
+            const controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.enableZoom = false;
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 1.2;
+
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+            scene.add(ambientLight);
+            
+            const dirLight = new THREE.DirectionalLight(0xdbeafe, 1.2);
+            dirLight.position.set(5, 3, 5);
+            scene.add(dirLight);
+
+            const backLight = new THREE.DirectionalLight(0x00b4d8, 0.5);
+            backLight.position.set(-5, -3, -5);
+            scene.add(backLight);
+
+            const textureLoader = new THREE.TextureLoader();
+            textureLoader.load('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg', (texture) => {
+                const geometry = new THREE.SphereGeometry(1, 64, 64);
+                const material = new THREE.MeshStandardMaterial({ 
+                    map: texture,
+                    roughness: 0.5,
+                    metalness: 0.1
+                });
+                const earth = new THREE.Mesh(geometry, material);
+                
+                // Add atmospheric glow
+                const glowGeo = new THREE.SphereGeometry(1.04, 64, 64);
+                const glowMat = new THREE.MeshBasicMaterial({
+                    color: 0x00b4d8,
+                    transparent: true,
+                    opacity: 0.15,
+                    blending: THREE.AdditiveBlending,
+                    side: THREE.BackSide
+                });
+                const atmosphere = new THREE.Mesh(glowGeo, glowMat);
+                
+                scene.add(earth);
+                scene.add(atmosphere);
+            });
+
+            function animate() {
+                requestAnimationFrame(animate);
+                controls.update();
+                renderer.render(scene, camera);
+            }
+            animate();
+        })();
+    </script>
+</div>
+</div>
+</section>
+<!-- Stats Ticker -->
+<div class="w-full bg-primary py-12 px-12 border-y border-outline-variant/10">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="text-center">
+<div class="text-4xl font-black text-white mb-1">142+</div>
+<div class="text-[10px] font-mono tracking-widest text-on-primary-container uppercase">Cities Influenced</div>
+</div>
+<div class="text-center">
+<div class="text-4xl font-black text-on-primary-container mb-1">0.002mm</div>
+<div class="text-[10px] font-mono tracking-widest text-on-primary-container uppercase">Tolerance Level</div>
+</div>
+<div class="text-center">
+<div class="text-4xl font-black text-white mb-1">2.4M</div>
+<div class="text-[10px] font-mono tracking-widest text-on-primary-container uppercase">Data Samples / Sec</div>
+</div>
+<div class="text-center">
+<div class="text-4xl font-black text-secondary mb-1">98%</div>
+<div class="text-[10px] font-mono tracking-widest text-on-primary-container uppercase">Carbon Offset Rate</div>
+</div>
+</div>
+</div>
+<!-- Footer Shell -->
+<footer class="w-full relative overflow-hidden bg-[#f7f9fb] dark:bg-[#00193c] border-t border-[#c4c6d1]/10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-12 py-20 w-full max-w-screen-2xl mx-auto">
+<div class="space-y-6">
+<div class="text-lg font-bold text-[#002D62] dark:text-white uppercase tracking-tighter">VG International</div>
+<p class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm leading-relaxed">
+                    Pioneering spatial engineering and precision architectural systems for a multi-dimensional future.
+                </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#00B4D8]" data-icon="public">public</span>
+<span class="material-symbols-outlined text-[#00B4D8]" data-icon="shield">shield</span>
+<span class="material-symbols-outlined text-[#00B4D8]" data-icon="hub">hub</span>
+</div>
+</div>
+<div class="space-y-6">
+<div class="text-[10px] font-bold text-primary/40 dark:text-white/40 uppercase tracking-[0.2em]">Quick Links</div>
+<ul class="space-y-3">
+<li><a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm tracking-wide uppercase hover:text-[#00B4D8] hover:translate-x-1 transition-all inline-block" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm tracking-wide uppercase hover:text-[#00B4D8] hover:translate-x-1 transition-all inline-block" href="#">Terms of Service</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm tracking-wide uppercase hover:text-[#00B4D8] hover:translate-x-1 transition-all inline-block" href="#">Sustainability</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm tracking-wide uppercase hover:text-[#00B4D8] hover:translate-x-1 transition-all inline-block" href="#">Global Offices</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<div class="text-[10px] font-bold text-primary/40 dark:text-white/40 uppercase tracking-[0.2em]">Contact</div>
+<p class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm">
+                    Marina Bay Financial Centre<br/>
+                    Singapore 018981<br/>
+                    hq@vginternational.io
+                </p>
+</div>
+<div class="space-y-6">
+<div class="text-[10px] font-bold text-primary/40 dark:text-white/40 uppercase tracking-[0.2em]">Newsletter</div>
+<div class="flex flex-col gap-3">
+<input class="bg-surface-container text-sm py-2 px-4 rounded focus:outline-none focus:ring-1 focus:ring-[#00B4D8] border-none" placeholder="Email Address" type="email"/>
+<button class="bg-[#00B4D8] text-white py-2 font-bold text-xs uppercase tracking-widest rounded hover:brightness-110 transition-all">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-outline-variant/10 text-center">
+<p class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm tracking-wide uppercase">
+                © 2024 VG International. Precision in every dimension.
+            </p>
+</div>
+</footer>
+</body></html>

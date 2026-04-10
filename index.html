@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VG International | Prototype Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#021c36",
+                        secondary: "#0091a2",
+                        surface: "#f8f9fb",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Manrope', 'sans-serif'],
+                        tech: ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f8f9fb; color: #191c1e; }
+        .bg-grid {
+            background-size: 60px 60px;
+            background-image: 
+                linear-gradient(to right, rgba(2, 28, 54, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(2, 28, 54, 0.05) 1px, transparent 1px);
+        }
+        .glass-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.6) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(2, 28, 54, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px -2px rgba(2, 28, 54, 0.05);
+        }
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+            transform: skewX(-20deg);
+            transition: left 0.7s ease;
+        }
+        .glass-card:hover::before {
+            left: 150%;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 145, 162, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(0, 145, 162, 0.15);
+        }
+        .text-gradient {
+            background: linear-gradient(180deg, #021c36 0%, #4a607c 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .index-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 6rem;
+            line-height: 1;
+            font-weight: 800;
+            color: rgba(2, 28, 54, 0.03);
+            position: absolute;
+            top: -10px;
+            right: 0px;
+            pointer-events: none;
+            transition: color 0.4s ease;
+        }
+        .glass-card:hover .index-number {
+            color: rgba(0, 145, 162, 0.08);
+        }
+        .live-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(0, 145, 162, 0.2); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 145, 162, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 145, 162, 0); }
+        }
+        .ambient-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 145, 162, 0.05) 0%, transparent 60%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            top: -200px;
+            right: -200px;
+        }
+        .ambient-glow-2 {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(2, 28, 54, 0.03) 0%, transparent 60%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            bottom: -300px;
+            left: -300px;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen bg-grid overflow-x-hidden font-sans">
+    
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-2"></div>
+
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-primary/5">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary text-3xl" data-icon="architecture">architecture</span>
+                <span class="text-xl font-extrabold tracking-[0.15em] font-display text-primary">VG<span class="text-primary/40">INTL</span></span>
+            </div>
+            <div class="flex items-center gap-6">
+                <span class="text-xs font-tech tracking-[0.2em] text-secondary uppercase bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20 font-bold">Client Review Hub</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-8 pt-40 pb-32">
+        <header class="mb-24 reveal-item max-w-3xl">
+            <div class="inline-flex items-center gap-4 mb-6">
+                <div class="h-[1px] w-12 bg-secondary"></div>
+                <span class="text-[10px] font-tech font-bold uppercase tracking-[0.3em] text-secondary">Design Iterations</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-display font-extrabold mb-8 text-gradient leading-[1.1] tracking-tight">
+                Architectural <br/>Prototypes.
+            </h1>
+            <p class="text-lg text-primary/60 font-medium leading-relaxed">
+                A consolidated directory of high-fidelity conceptual designs and working prototypes. Select a version below to review the UI/UX implementation and aesthetic proposals for VG International.
+            </p>
+        </header>
+
+        <section class="mb-16">
+            <h2 class="text-xs font-tech tracking-[0.2em] font-bold uppercase text-primary/40 mb-8 border-b border-primary/10 pb-4">Milestone Iterations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- First Prototype -->
+                <a href="firstprototype.html" target="_blank" class="glass-card p-10 flex flex-col justify-between group h-full border-primary/10">
+                    <div class="index-number">V1</div>
+                    <div class="relative z-10 w-full mb-12">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary">history</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-extrabold mb-3 text-primary group-hover:text-secondary transition-colors">First Prototype</h3>
+                        <p class="text-sm text-primary/60 leading-relaxed font-medium">
+                            The initial conceptual foundation. The original design architecture before modern refinements.
+                        </p>
+                    </div>
+                    <div class="relative z-10 flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-primary/70 group-hover:text-secondary transition-colors">
+                        <span class="group-hover:mr-2 transition-all">View Initial Version</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </div>
+                </a>
+
+                <!-- Live Prototype -->
+                <a href="P.html" target="_blank" class="glass-card p-10 flex flex-col justify-between group h-full border-secondary/30">
+                    <div class="index-number">NEW</div>
+                    <div class="relative z-10 w-full mb-12">
+                        <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-6 live-pulse">
+                            <span class="material-symbols-outlined text-secondary">language</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-extrabold mb-3 text-primary group-hover:text-secondary transition-colors">VGG New Website</h3>
+                        <p class="text-sm text-primary/60 leading-relaxed font-medium">
+                            Currently deployed live prototype model for the new site architecture. Active link preview. 
+                        </p>
+                    </div>
+                    <div class="relative z-10 flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-secondary">
+                        <span class="group-hover:mr-2 transition-all">Launch Live Environment</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-xs font-tech tracking-[0.2em] font-bold uppercase text-primary/40 mb-8 border-b border-primary/10 pb-4">Iteration Archive</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Prototype 1 -->
+                <a href="P1.html" target="_blank" class="glass-card p-8 flex flex-col justify-between group aspect-square">
+                    <div class="index-number">01</div>
+                    <div class="relative z-10">
+                        <span class="material-symbols-outlined text-primary/30 text-3xl mb-6 group-hover:text-secondary transition-colors">layers</span>
+                        <h3 class="text-xl font-display font-bold mb-2 text-primary">Concept 01</h3>
+                        <p class="text-xs text-primary/50 font-medium truncate">VG INTERNATIONAL</p>
+                    </div>
+                    <div class="relative z-10 border border-primary/10 bg-white/50 px-4 py-3 text-center text-xs font-bold tracking-widest uppercase text-primary/70 group-hover:bg-secondary group-hover:text-white group-hover:border-secondary transition-all">
+                        View Mockup
+                    </div>
+                </a>
+
+                <!-- Prototype 2 -->
+                <a href="P2.html" target="_blank" class="glass-card p-8 flex flex-col justify-between group aspect-square">
+                    <div class="index-number">02</div>
+                    <div class="relative z-10">
+                        <span class="material-symbols-outlined text-primary/30 text-3xl mb-6 group-hover:text-secondary transition-colors">domain</span>
+                        <h3 class="text-xl font-display font-bold mb-2 text-primary">Concept 02</h3>
+                        <p class="text-xs text-primary/50 font-medium truncate">Precision Architecture</p>
+                    </div>
+                    <div class="relative z-10 border border-primary/10 bg-white/50 px-4 py-3 text-center text-xs font-bold tracking-widest uppercase text-primary/70 group-hover:bg-secondary group-hover:text-white group-hover:border-secondary transition-all">
+                        View Mockup
+                    </div>
+                </a>
+
+                <!-- Prototype 3 -->
+                <a href="P3.html" target="_blank" class="glass-card p-8 flex flex-col justify-between group aspect-square">
+                    <div class="index-number">03</div>
+                    <div class="relative z-10">
+                        <span class="material-symbols-outlined text-primary/30 text-3xl mb-6 group-hover:text-secondary transition-colors">precision_manufacturing</span>
+                        <h3 class="text-xl font-display font-bold mb-2 text-primary">Concept 03</h3>
+                        <p class="text-xs text-primary/50 font-medium truncate">Engineering High-Performance</p>
+                    </div>
+                    <div class="relative z-10 border border-primary/10 bg-white/50 px-4 py-3 text-center text-xs font-bold tracking-widest uppercase text-primary/70 group-hover:bg-secondary group-hover:text-white group-hover:border-secondary transition-all">
+                        View Mockup
+                    </div>
+                </a>
+
+                <!-- Prototype 4 -->
+                <a href="P4.html" target="_blank" class="glass-card p-8 flex flex-col justify-between group aspect-square">
+                    <div class="index-number">04</div>
+                    <div class="relative z-10">
+                        <span class="material-symbols-outlined text-primary/30 text-3xl mb-6 group-hover:text-secondary transition-colors">tune</span>
+                        <h3 class="text-xl font-display font-bold mb-2 text-primary">Concept 04</h3>
+                        <p class="text-xs text-primary/50 font-medium truncate">Engineering Precision</p>
+                    </div>
+                    <div class="relative z-10 border border-primary/10 bg-white/50 px-4 py-3 text-center text-xs font-bold tracking-widest uppercase text-primary/70 group-hover:bg-secondary group-hover:text-white group-hover:border-secondary transition-all">
+                        View Mockup
+                    </div>
+                </a>
+
+                <!-- Prototype 5 -->
+                <a href="P5.html" target="_blank" class="glass-card p-8 flex flex-col justify-between group aspect-square">
+                    <div class="index-number">05</div>
+                    <div class="relative z-10">
+                        <span class="material-symbols-outlined text-primary/30 text-3xl mb-6 group-hover:text-secondary transition-colors">gavel</span>
+                        <h3 class="text-xl font-display font-bold mb-2 text-primary">Concept 05</h3>
+                        <p class="text-xs text-primary/50 font-medium truncate">Engineering Authority</p>
+                    </div>
+                    <div class="relative z-10 border border-primary/10 bg-white/50 px-4 py-3 text-center text-xs font-bold tracking-widest uppercase text-primary/70 group-hover:bg-secondary group-hover:text-white group-hover:border-secondary transition-all">
+                        View Mockup
+                    </div>
+                </a>
+
+                <!-- Prototype 6 -->
+                <a href="P6.html" target="_blank" class="glass-card p-8 flex flex-col justify-between group aspect-square">
+                    <div class="index-number">06</div>
+                    <div class="relative z-10">
+                        <span class="material-symbols-outlined text-primary/30 text-3xl mb-6 group-hover:text-secondary transition-colors">view_quilt</span>
+                        <h3 class="text-xl font-display font-bold mb-2 text-primary">Concept 06</h3>
+                        <p class="text-xs text-primary/50 font-medium truncate">Projects Gallery</p>
+                    </div>
+                    <div class="relative z-10 border border-primary/10 bg-white/50 px-4 py-3 text-center text-xs font-bold tracking-widest uppercase text-primary/70 group-hover:bg-secondary group-hover:text-white group-hover:border-secondary transition-all">
+                        View Mockup
+                    </div>
+                </a>
+
+                <!-- Prototype 7 -->
+                <a href="P7.html" target="_blank" class="glass-card p-8 flex flex-col justify-between group aspect-square">
+                    <div class="index-number">07</div>
+                    <div class="relative z-10">
+                        <span class="material-symbols-outlined text-primary/30 text-3xl mb-6 group-hover:text-secondary transition-colors">architecture</span>
+                        <h3 class="text-xl font-display font-bold mb-2 text-primary">Concept 07</h3>
+                        <p class="text-xs text-primary/50 font-medium truncate">Engineering Precision V2</p>
+                    </div>
+                    <div class="relative z-10 border border-primary/10 bg-white/50 px-4 py-3 text-center text-xs font-bold tracking-widest uppercase text-primary/70 group-hover:bg-secondary group-hover:text-white group-hover:border-secondary transition-all">
+                        View Mockup
+                    </div>
+                </a>
+
+                <!-- Prototype 8 -->
+                <a href="P8.html" target="_blank" class="glass-card p-8 flex flex-col justify-between group aspect-square">
+                    <div class="index-number">08</div>
+                    <div class="relative z-10">
+                        <span class="material-symbols-outlined text-primary/30 text-3xl mb-6 group-hover:text-secondary transition-colors">lens</span>
+                        <h3 class="text-xl font-display font-bold mb-2 text-primary">Concept 08</h3>
+                        <p class="text-xs text-primary/50 font-medium truncate">Engineering Clarity</p>
+                    </div>
+                    <div class="relative z-10 border border-primary/10 bg-white/50 px-4 py-3 text-center text-xs font-bold tracking-widest uppercase text-primary/70 group-hover:bg-secondary group-hover:text-white group-hover:border-secondary transition-all">
+                        View Mockup
+                    </div>
+                </a>
+
+                <!-- Prototype 9 -->
+                <a href="P9.html" target="_blank" class="glass-card p-8 flex flex-col justify-between group aspect-square">
+                    <div class="index-number">09</div>
+                    <div class="relative z-10">
+                        <span class="material-symbols-outlined text-primary/30 text-3xl mb-6 group-hover:text-secondary transition-colors">verified_user</span>
+                        <h3 class="text-xl font-display font-bold mb-2 text-primary">Concept 09</h3>
+                        <p class="text-xs text-primary/50 font-medium truncate">Sovereign Precision</p>
+                    </div>
+                    <div class="relative z-10 border border-primary/10 bg-white/50 px-4 py-3 text-center text-xs font-bold tracking-widest uppercase text-primary/70 group-hover:bg-secondary group-hover:text-white group-hover:border-secondary transition-all">
+                        View Mockup
+                    </div>
+                </a>
+
+                <!-- Prototype 10 -->
+                <a href="P10.html" target="_blank" class="glass-card p-8 flex flex-col justify-between group aspect-square">
+                    <div class="index-number">10</div>
+                    <div class="relative z-10">
+                        <span class="material-symbols-outlined text-primary/30 text-3xl mb-6 group-hover:text-secondary transition-colors">water_drop</span>
+                        <h3 class="text-xl font-display font-bold mb-2 text-primary">Concept 10</h3>
+                        <p class="text-xs text-primary/50 font-medium truncate">Engineering Clarity V2</p>
+                    </div>
+                    <div class="relative z-10 border border-primary/10 bg-white/50 px-4 py-3 text-center text-xs font-bold tracking-widest uppercase text-primary/70 group-hover:bg-secondary group-hover:text-white group-hover:border-secondary transition-all">
+                        View Mockup
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

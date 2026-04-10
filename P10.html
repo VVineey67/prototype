@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VG International | Engineering Clarity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#24467c",
+                        "inverse-primary": "#006875",
+                        "surface": "#001429",
+                        "on-primary-fixed": "#001f24",
+                        "on-surface-variant": "#bac9cc",
+                        "outline-variant": "#3b494c",
+                        "surface-container-high": "#132b45",
+                        "primary-fixed": "#9cf0ff",
+                        "secondary-fixed-dim": "#abc7ff",
+                        "outline": "#849396",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#00daf3",
+                        "on-primary-container": "#00626e",
+                        "on-secondary": "#032f64",
+                        "surface-variant": "#1f3650",
+                        "surface-container-highest": "#1f3650",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#243a55",
+                        "primary": "#c3f5ff",
+                        "tertiary-container": "#fec931",
+                        "primary-container": "#00e5ff",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "on-surface": "#d2e4ff",
+                        "on-background": "#d2e4ff",
+                        "surface-container-lowest": "#000f21",
+                        "secondary-fixed": "#d7e2ff",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#f3bf26",
+                        "primary-fixed-dim": "#00daf3",
+                        "tertiary-fixed": "#ffdf96",
+                        "on-secondary-container": "#96b5f3",
+                        "secondary-container": "#24467c",
+                        "on-primary-fixed-variant": "#004f58",
+                        "inverse-on-surface": "#1a324c",
+                        "surface-container-low": "#021c36",
+                        "surface-container": "#06213a",
+                        "on-primary": "#00363d",
+                        "tertiary": "#ffeac0",
+                        "secondary": "#abc7ff",
+                        "surface-dim": "#001429",
+                        "on-tertiary-container": "#6f5500",
+                        "on-tertiary": "#3e2e00",
+                        "on-tertiary-fixed": "#251a00",
+                        "on-secondary-fixed": "#001b3f",
+                        "inverse-surface": "#d2e4ff",
+                        "background": "#001429"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .blueprint-grid {
+            background-image: 
+                linear-gradient(to right, rgba(195, 245, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(195, 245, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .glass-panel {
+            background: rgba(31, 54, 80, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(195, 245, 255, 0.1);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full border-b border-white/10 bg-white/40 dark:bg-slate-950/40 backdrop-blur-xl z-50 flex justify-between items-center px-8 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-cyan-400" data-icon="architecture">architecture</span>
+<span class="text-xl font-extrabold tracking-tighter text-slate-900 dark:text-white font-headline">VG INTERNATIONAL</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-cyan-400 border-b-2 border-cyan-400 font-label text-xs tracking-widest px-1 py-1" href="#">SOLUTIONS</a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-cyan-400/10 hover:text-cyan-400 transition-all font-label text-xs tracking-widest px-1 py-1" href="#">PROJECTS</a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-cyan-400/10 hover:text-cyan-400 transition-all font-label text-xs tracking-widest px-1 py-1" href="#">INNOVATION</a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-cyan-400/10 hover:text-cyan-400 transition-all font-label text-xs tracking-widest px-1 py-1" href="#">INSIGHTS</a>
+</nav>
+<button class="bg-primary-container text-on-primary px-6 py-2 font-label text-xs tracking-widest font-bold hover:bg-primary transition-all active:scale-95 shadow-[0_0_15px_rgba(0,229,255,0.1)]">
+            REQUEST PROPOSAL
+        </button>
+</header>
+<main class="pt-24 blueprint-grid">
+<!-- Hero Section -->
+<section class="relative min-h-[795px] flex flex-col items-center justify-center px-8 overflow-hidden">
+<div class="absolute inset-0 z-0 flex items-center justify-center opacity-40">
+<img alt="Exploded skyscraper model" class="w-full max-w-5xl object-contain" data-alt="hyper-realistic 3D isometric clay-white skyscraper model exploded view with glowing internal cyan and gold MEPF pipes architectural render clinical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAW1aGeXqUD9Ytp7wsvHJo4hGCnqa7-BbCwRDC_eJGwEy2FXtapdRjckTKNy10AZXD3nn0cJi0JQHUvsVxIpkhnymwF-IPfG4H-VunF3qMC5SxhDCm4LqF5CJHTzQYgdFsQ43t774uwCLFDFKkiLCD3EWH8a9qmSurqeFn2_S895zAeprCu29aJfZUxl0jD13uGS8lJlcmX51FBUdDL6crKBbOpCOpqCc6N8820Avg3T58_Ow8GleGRBVWHHFkpk4MWVV9FSo68LA"/>
+</div>
+<div class="relative z-10 text-center max-w-4xl">
+<div class="inline-flex items-center gap-2 mb-6">
+<span class="w-2 h-2 bg-primary animate-pulse"></span>
+<span class="font-label text-[10px] tracking-[0.3em] uppercase text-primary">Precision Engineering Division</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-none mb-8 text-white">
+                    Engineering clarity for <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">complex building systems</span>
+</h1>
+<p class="text-on-surface-variant max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
+                    High-fidelity consultancy for critical infrastructure. We translate architectural ambition into technical certainty through surgical-grade structural and MEPF systems engineering.
+                </p>
+<div class="flex gap-4 justify-center">
+<button class="bg-primary text-on-primary px-10 py-4 font-label text-sm tracking-widest font-bold hover:shadow-[0_0_25px_rgba(195,245,255,0.4)] transition-all">
+                        EXPLORE SERVICES
+                    </button>
+<button class="border border-primary/30 text-primary px-10 py-4 font-label text-sm tracking-widest font-bold hover:bg-primary/5 transition-all">
+                        VIEW BLUEPRINTS
+                    </button>
+</div>
+</div>
+<!-- Scroll Telemetry -->
+<div class="absolute bottom-10 left-12 hidden md:block">
+<div class="flex flex-col gap-1">
+<span class="font-label text-[10px] text-primary/40">LONGITUDE</span>
+<span class="font-label text-xs text-primary">103.8198° E</span>
+</div>
+</div>
+<div class="absolute bottom-10 right-12 hidden md:block">
+<div class="flex flex-col gap-1 items-end">
+<span class="font-label text-[10px] text-primary/40">LATITUDE</span>
+<span class="font-label text-xs text-primary">1.3521° N</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Services -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Feature -->
+<div class="md:col-span-8 glass-panel p-12 glow-hover transition-all flex flex-col justify-between group">
+<div>
+<span class="font-label text-[10px] text-primary/60 mb-4 block">SYS-001 / CORE</span>
+<h3 class="text-3xl font-headline font-bold text-white mb-6">Structural Analysis &amp; Design</h3>
+<p class="text-on-surface-variant max-w-md">Performance-based seismic engineering and structural optimization for high-rise typologies and complex geometries.</p>
+</div>
+<div class="mt-12 flex justify-between items-end">
+<span class="material-symbols-outlined text-6xl text-primary/20 group-hover:text-primary transition-colors" data-icon="pentagon">pentagon</span>
+<span class="material-symbols-outlined text-2xl text-primary" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Secondary -->
+<div class="md:col-span-4 glass-panel p-8 glow-hover transition-all group">
+<span class="font-label text-[10px] text-primary/60 mb-4 block">SYS-002 / FLOW</span>
+<h3 class="text-xl font-headline font-bold text-white mb-4">MEPF Systems</h3>
+<p class="text-on-surface-variant text-sm mb-8">Integrated mechanical, electrical, and plumbing solutions with focus on resiliency.</p>
+<img alt="MEPF Systems" class="w-full grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="3D abstract rendering of mechanical pipes and cabling system clean white background cyan lighting accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdLbjNF4v10zxSfhVoQruCYOpEuu9E9T8dWd02YhFUJbuzhmEenMBabzAZvR_WcAcJe7dfowhv3xQvxPhJKtJC8RsNdAzKxT_KGO4IziNmlg5oMFdDYQW9GppeaHXt9zfSEo48jDKsUHlY2pqE_llHGETW0PSE-13qUhiFSNCKTXF4ea8nc7lVKmasq-BdT1yCoVrAmhFLPpW1qv8jaloAd8gup7Agqj71vMCVZwahuThLgOjDKVDdG44WW3G6N9JU_CGU4cMODN8"/>
+</div>
+<!-- Third -->
+<div class="md:col-span-4 glass-panel p-8 glow-hover transition-all group">
+<span class="font-label text-[10px] text-primary/60 mb-4 block">SYS-003 / BIM</span>
+<h3 class="text-xl font-headline font-bold text-white mb-4">Architecture Support</h3>
+<p class="text-on-surface-variant text-sm mb-8">Technical bridge between creative vision and constructible reality.</p>
+<div class="h-32 border-l border-t border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary/40 group-hover:rotate-45 transition-transform duration-700" data-icon="layers">layers</span>
+</div>
+</div>
+<!-- Large Stats/Feature -->
+<div class="md:col-span-8 bg-surface-container-high p-12 border border-primary/5 flex flex-col md:flex-row gap-8 items-center">
+<div class="flex-1">
+<h4 class="font-label text-4xl font-bold text-primary mb-2">99.9%</h4>
+<p class="font-label text-[10px] tracking-widest text-on-surface-variant uppercase">Critical Uptime Reliability</p>
+</div>
+<div class="w-px h-16 bg-outline-variant hidden md:block"></div>
+<div class="flex-1">
+<h4 class="font-label text-4xl font-bold text-primary mb-2">12M+</h4>
+<p class="font-label text-[10px] tracking-widest text-on-surface-variant uppercase">Square Feet Engineered</p>
+</div>
+<div class="w-px h-16 bg-outline-variant hidden md:block"></div>
+<div class="flex-1">
+<h4 class="font-label text-4xl font-bold text-primary mb-2">35</h4>
+<p class="font-label text-[10px] tracking-widest text-on-surface-variant uppercase">Global Jurisdictions</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Specialisms Section -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="px-8 max-w-7xl mx-auto mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-xl">
+<span class="font-label text-[10px] tracking-[0.4em] text-primary mb-4 block">SECTOR SPECIALISMS</span>
+<h2 class="text-4xl font-headline font-bold text-white leading-tight">Navigating the extremes of high-performance architecture.</h2>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex overflow-x-auto pb-12 gap-8 px-8 no-scrollbar">
+<!-- Tile 1 -->
+<div class="min-w-[400px] h-[600px] relative overflow-hidden group">
+<img alt="Data Centers" class="absolute inset-0 w-full h-full object-cover grayscale transition-transform duration-1000 group-hover:scale-110 group-hover:grayscale-0" data-alt="cinematic photography of a futuristic data center hall with glowing server racks and neon cyan lighting blueprint overlay technical drawing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ2WwdR3IBa7vp-IsVROLyBvI_sddWXrrGprOIqGAXo3cPIlDRXZyq4r3SUOy_XxKn6aTkeVGFSYO_WW6A2cfDGihf-WY2MChfyiRaNNJK6xE4XCg0Uq6Xjivj3WpucNCFMoLWrSDsDRijCM1O-awltXUpRTzpxvQ5gkFTyePLIWBqtYZ10v2SGb8bOs2Zl6eF6rJJ7-D3mUASlfkAI4vMCW3LMYHtQZpyfPAtSRrG2SxjD1oWapVrpVbsUcMip2fBgQMIH7H0KeY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-80"></div>
+<div class="absolute bottom-12 left-12 right-12">
+<span class="font-label text-[10px] text-primary mb-2 block tracking-widest">MISSION CRITICAL</span>
+<h4 class="text-2xl font-headline font-bold text-white mb-4">Hyper-Scale Data Centers</h4>
+<p class="text-on-surface-variant text-sm mb-6">Thermal dynamics and redundant power systems for the AI era.</p>
+<div class="h-1 bg-primary/20 w-full">
+<div class="h-full bg-primary w-1/3 group-hover:w-full transition-all duration-700"></div>
+</div>
+</div>
+</div>
+<!-- Tile 2 -->
+<div class="min-w-[400px] h-[600px] relative overflow-hidden group">
+<img alt="Net-Zero" class="absolute inset-0 w-full h-full object-cover grayscale transition-transform duration-1000 group-hover:scale-110 group-hover:grayscale-0" data-alt="modern sustainable skyscraper with vertical forests and solar glass facade blueprint lines overlay dramatic sunset lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDat-mkCMb_b05-7JOORnysnYkyY5F4Mn4jBsUF3fQbbJjqcFC1SQ6MEDLa1r2QOo086GsFIKGQmrkqBn9q8qSE3GZ3XcB5lRNorLqLOWtvoE40rL3r9DKvl6lh6Zq3jayivMPFCFNre7EW1x1Hdu1vCKPySH-4Cven4Evt7FsyY4o4J2mM36DuBOZUS9JQRCRqzMxU8D7nCbZFntD5_E2DtSsJKKuk4HQNZweQVl1SivFUF7zo_ZHtYeBQuENCf2021NbFHrCbsnQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-80"></div>
+<div class="absolute bottom-12 left-12 right-12">
+<span class="font-label text-[10px] text-primary mb-2 block tracking-widest">ECOLOGICAL RIGOR</span>
+<h4 class="text-2xl font-headline font-bold text-white mb-4">Net-Zero High Rise</h4>
+<p class="text-on-surface-variant text-sm mb-6">Decarbonizing vertical urbanism through material science and passive logic.</p>
+<div class="h-1 bg-primary/20 w-full">
+<div class="h-full bg-primary w-1/4 group-hover:w-full transition-all duration-700"></div>
+</div>
+</div>
+</div>
+<!-- Tile 3 -->
+<div class="min-w-[400px] h-[600px] relative overflow-hidden group">
+<img alt="Transport Hubs" class="absolute inset-0 w-full h-full object-cover grayscale transition-transform duration-1000 group-hover:scale-110 group-hover:grayscale-0" data-alt="ultra-modern transport hub airport terminal with complex roof geometry blueprints sketches integrated into image high-tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADu_NwdA5-nRE-Fe3hh2Y92MtBsPv3ul4fLMe2CJDGKMbfuwlUSw38ZpsHMrTdjbgdwRXCd6ttcnzbrrCI65__P398efccmfvKIILEYToIZiViAfoIon-NQO7xg6rgiEFvPbPR1aa7avw8xJk-zT_ZscqLPnwVXgGOiFk9fpEjvpJ6X6bPyKTETxONRBwvfJpC1zTS8k8jSovAEPr_qeG9XKsTxKSMrtvY4E_Bn6cnhyJtFXr6bCk9BiklNRyVc-G7zaZL09jvL5w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-80"></div>
+<div class="absolute bottom-12 left-12 right-12">
+<span class="font-label text-[10px] text-primary mb-2 block tracking-widest">URBAN VELOCITY</span>
+<h4 class="text-2xl font-headline font-bold text-white mb-4">Intermodal Infrastructure</h4>
+<p class="text-on-surface-variant text-sm mb-6">The engineering of movement: hubs, transit, and structural flow.</p>
+<div class="h-1 bg-primary/20 w-full">
+<div class="h-full bg-primary w-1/5 group-hover:w-full transition-all duration-700"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Owner's Engineering: Risk vs Value -->
+<section class="py-32 px-8 max-w-7xl mx-auto border-t border-white/5">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div>
+<div class="mb-10">
+<span class="font-label text-[10px] tracking-widest text-primary/60 mb-4 block">THE PHILOSOPHY</span>
+<blockquote class="text-3xl font-serif italic text-secondary leading-relaxed mb-8">
+                            "Technical excellence is the baseline. Our true value lies in the mitigation of uncertainty during the owner's capital journey."
+                        </blockquote>
+<div class="flex items-center gap-4">
+<div class="w-12 h-[1px] bg-primary"></div>
+<span class="font-label text-xs tracking-widest text-white">V. GUPTA, MANAGING DIRECTOR</span>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex gap-6 items-start">
+<span class="font-label text-primary text-xl">01</span>
+<div>
+<h5 class="font-headline font-bold text-white mb-2">Technical Due Diligence</h5>
+<p class="text-on-surface-variant text-sm">Forensic analysis of systems before capital commitment.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<span class="font-label text-primary text-xl">02</span>
+<div>
+<h5 class="font-headline font-bold text-white mb-2">Peer Review Oversight</h5>
+<p class="text-on-surface-variant text-sm">Critical appraisal of 3rd party designs to ensure compliance and cost efficiency.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative aspect-square glass-panel p-1 border-primary/20 overflow-hidden">
+<div class="absolute inset-0 blueprint-grid opacity-20"></div>
+<div class="relative h-full w-full flex flex-col p-12">
+<div class="flex justify-between items-start mb-auto">
+<span class="font-label text-[10px] text-primary uppercase tracking-tighter">Value Optimization</span>
+<span class="font-label text-[10px] text-error uppercase tracking-tighter">Risk Exposure</span>
+</div>
+<!-- 3D Matrix Visualization Mock -->
+<div class="relative flex-1 flex items-center justify-center">
+<div class="absolute inset-0 border-l border-b border-white/20"></div>
+<div class="w-full h-full relative overflow-hidden">
+<!-- Asymmetric Data Shapes -->
+<div class="absolute bottom-0 left-0 w-2/3 h-1/2 bg-primary/20 border-t border-r border-primary/40 flex items-center justify-center">
+<span class="font-label text-[10px] text-primary -rotate-45">OPTIMAL ZONE</span>
+</div>
+<div class="absolute top-1/4 right-0 w-1/3 h-1/3 border border-error/30 bg-error/5 flex items-center justify-center">
+<span class="font-label text-[10px] text-error rotate-45">RE-ENGINEER</span>
+</div>
+<!-- Vector Pulse Path -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="text-primary-container" d="M0 100 L20 80 L50 90 L80 40 L100 20" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+<circle class="text-primary" cx="20" cy="80" fill="currentColor" r="1"></circle>
+<circle class="text-primary" cx="50" cy="90" fill="currentColor" r="1"></circle>
+<circle class="text-primary" cx="80" cy="40" fill="currentColor" r="1"></circle>
+</svg>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div class="flex flex-col gap-1">
+<span class="font-label text-[8px] text-white/40">MATRIX_ID</span>
+<span class="font-label text-xs text-white">VG_RV_440</span>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="grid_view">grid_view</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Global Presence -->
+<section class="py-24 px-8 border-t border-white/5">
+<div class="text-center mb-16">
+<span class="font-label text-[10px] tracking-widest text-primary mb-4 block">GLOBAL FOOTPRINT</span>
+<h2 class="text-4xl font-headline font-bold text-white">Singapore Base. Global Compliance.</h2>
+</div>
+<div class="relative h-[500px] w-full bg-surface-container-lowest border border-white/5 overflow-hidden group">
+<img alt="Global Network Map" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-1000" data-alt="minimalist architectural style world map dark blue and cyan with glowing hubs and data lines connecting cities schematic style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5iq1jpPdAsMzzNVNBG1g6Tea1P4HPWlyWfl4r3IV-v93obaVN74RW2nuRqj4SV2IYOXN7BOyjos7m-dDEyGjRMhvru7pnemPLLcKXe7X7yU77yS2mW2UeZTmIfg5TAUWBjcw79jS3M1oKAplWMSf8TYjLmCAYIkTC7cEz3MSmIbNCHTtKrYxb2F5CvSUUzYbk0NzMmFKTh_RDGQGixiqKx8ZJzEswpflZsm54a7wcFMQxKFDKzVcozyCqoncxTsrZAXhCgiulYdM"/>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="w-4 h-4 bg-primary animate-ping rounded-full mb-2"></div>
+<span class="font-label text-xs text-white tracking-widest bg-surface/80 px-3 py-1 border border-primary/20 backdrop-blur-sm">HQ SINGAPORE</span>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-8 flex flex-col items-center text-center">
+<h2 class="text-5xl font-headline font-extrabold text-white mb-8 tracking-tighter">Ready for the next complex build?</h2>
+<p class="text-on-surface-variant max-w-xl mb-12">Connect with our engineering principals to discuss system auditing, design enhancement, or technical due diligence.</p>
+<button class="bg-primary text-on-primary px-12 py-5 font-label text-sm tracking-widest font-bold shadow-[0_0_30px_rgba(195,245,255,0.2)] hover:shadow-[0_0_50px_rgba(195,245,255,0.4)] transition-all">
+                ENGAGE OUR TEAM
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 dark:bg-black w-full border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 w-full">
+<div>
+<span class="text-lg font-bold text-white font-headline block mb-6">VG INTERNATIONAL</span>
+<p class="text-slate-500 text-xs leading-loose">Precision engineering consultancy for large-scale urban infrastructure and mission-critical systems.</p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label text-xs tracking-widest text-primary uppercase font-bold">SOLUTIONS</span>
+<a class="text-slate-500 hover:text-cyan-300 transition-colors text-xs font-label" href="#">Structural Analysis</a>
+<a class="text-slate-500 hover:text-cyan-300 transition-colors text-xs font-label" href="#">MEPF Design</a>
+<a class="text-slate-500 hover:text-cyan-300 transition-colors text-xs font-label" href="#">BIM Integration</a>
+<a class="text-slate-500 hover:text-cyan-300 transition-colors text-xs font-label" href="#">Risk Mitigation</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label text-xs tracking-widest text-primary uppercase font-bold">RESOURCES</span>
+<a class="text-slate-500 hover:text-cyan-300 transition-colors text-xs font-label" href="#">Global Compliance</a>
+<a class="text-slate-500 hover:text-cyan-300 transition-colors text-xs font-label" href="#">Blueprint Vault</a>
+<a class="text-slate-500 hover:text-cyan-300 transition-colors text-xs font-label" href="#">Privacy Protocol</a>
+<a class="text-slate-500 hover:text-cyan-300 transition-colors text-xs font-label" href="#">Case Studies</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label text-xs tracking-widest text-primary uppercase font-bold">CONTACT</span>
+<div class="text-slate-500 text-xs font-label">
+                    8 Marina View, #43-01 Asia Square Tower 1,<br/> Singapore 018960
+                </div>
+<div class="text-slate-500 text-xs font-label">T: +65 6XXX XXXX</div>
+<div class="text-cyan-400 text-xs font-label font-bold">info@vginternational.com</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-[10px] text-slate-500 font-label tracking-widest uppercase">© 2024 VG INTERNATIONAL. PRECISION ENGINEERING DIVISION.</span>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-slate-500 text-sm hover:text-primary transition-colors cursor-pointer" data-icon="terminal">terminal</span>
+<span class="material-symbols-outlined text-slate-500 text-sm hover:text-primary transition-colors cursor-pointer" data-icon="language">language</span>
+<span class="material-symbols-outlined text-slate-500 text-sm hover:text-primary transition-colors cursor-pointer" data-icon="security">security</span>
+</div>
+</div>
+</footer>
+</body></html>
